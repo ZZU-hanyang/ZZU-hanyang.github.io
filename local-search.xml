@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>数据结构</title>
+    <link href="/2021/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <url>/2021/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    
+    <content type="html"><![CDATA[<h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><h3 id="short-int-long-long-long"><a href="#short-int-long-long-long" class="headerlink" title="short; int;  long;   long long"></a>short; int;  long;   long long</h3><pre><code>short 占2个字节cout &lt;&lt; &quot;short占的字节:&quot; &lt;&lt; sizeof(short) &lt;&lt; endl;int 占4个字节cout &lt;&lt; &quot;int占的字节：&quot; &lt;&lt; sizeof(int) &lt;&lt; endl;long占4个字节 cout &lt;&lt; &quot;long占的字节：&quot; &lt;&lt; sizeof(long) &lt;&lt; endl;long long 占8个字节cout &lt;&lt; &quot;long long占的字节：&quot; &lt;&lt; sizeof(long long) &lt;&lt; endl;</code></pre><h2 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h2><h3 id="float；-double"><a href="#float；-double" class="headerlink" title="float； double"></a>float； double</h3><pre><code>cout &lt;&lt; &quot;float占的字节：&quot; &lt;&lt; sizeof(float) &lt;&lt; endl;cout &lt;&lt; &quot;double占的字节：&quot; &lt;&lt; sizeof(double) &lt;&lt; endl;float num1 = 3.14;//如果直接这样定义，系统会认为这是一个double类型的数字，鼠标放在3.14上会显示doublefloat num2 = 3.14f;//数字后面加f表示num2是float型数字，而不是    float型，鼠标放在3.14上会显示float</code></pre><h2 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h2><h3 id="char"><a href="#char" class="headerlink" title="char"></a>char</h3><pre><code>/* 字符型变量并不是将字符本身存放在内存中，而是将其对应的ASCII码    值放在存储单元*/char ch = &#39;A&#39;;   cout &lt;&lt; (int)ch &lt;&lt; endl;//强制转换成整型输出cout &lt;&lt; ch &lt;&lt; endl;cout &lt;&lt; &quot;char占的字节：&quot; &lt;&lt; sizeof(char) &lt;&lt; endl;string str1 = &quot;hello world&quot;;//C++风格的字符串定义，需要添加加string头文件                            //定义格式是： string = &quot;字符串&quot;cout &lt;&lt; str1 &lt;&lt; endl;char str2[] = &quot;Hello World&quot;;//C风格的字符串定义                            //定义格式是： char 变量名 [] = &quot;字符串&quot;cout &lt;&lt; str2 &lt;&lt; endl;</code></pre><h2 id="反义字符"><a href="#反义字符" class="headerlink" title="反义字符"></a>反义字符</h2><h3 id="“-“"><a href="#“-“" class="headerlink" title="“\“"></a>“\“</h3><pre><code>cout &lt;&lt; &quot;\\&quot; &lt;&lt; endl;//输出反斜杠&quot;\&quot;,用反义字符“\\”表示</code></pre><h3 id="“-“-1"><a href="#“-“-1" class="headerlink" title="“/“"></a>“/“</h3><pre><code>cout &lt;&lt; &quot;\/&quot; &lt;&lt; endl;//输出反斜杠“/”，用反义字符“\/”表示</code></pre><h3 id="“-t”"><a href="#“-t”" class="headerlink" title="“\t”"></a>“\t”</h3><pre><code>cout &lt;&lt; &quot;hello\tworld\t&quot; &lt;&lt; endl;//制表字符，字符占据一个tab位，并且左对齐,一个tab占八个字符位置cout &lt;&lt; &quot;good\tmorning\t&quot; &lt;&lt; endl;cout &lt;&lt; &quot;hurry\tup\t&quot; &lt;&lt; endl;</code></pre><h3 id="“-t”-1"><a href="#“-t”-1" class="headerlink" title="“\t”"></a>“\t”</h3><pre><code>cout &lt;&lt; &quot;hello world\n&quot;;//换行字符“\n”</code></pre><h2 id="bool类型"><a href="#bool类型" class="headerlink" title="bool类型"></a>bool类型</h2><h3 id="true-false"><a href="#true-false" class="headerlink" title="true false"></a>true false</h3><pre><code>//布尔类型（bool)只有两个值：0和1bool flag1 = true;//创建bool类型数据，true代表1cout &lt;&lt; flag1 &lt;&lt; endl;bool flag2 = false;//创建bool类型数据，false代表0cout &lt;&lt; flag2 &lt;&lt; endl;cout &lt;&lt; &quot;true占的字节&quot; &lt;&lt; sizeof(bool) &lt;&lt; endl;</code></pre><hr>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>第一篇博客</title>
     <link href="/2021/11/22/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <url>/2021/11/22/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
