@@ -4,6 +4,101 @@
   
   
   <entry>
+    <title>逻辑运算符</title>
+    <link href="/2021/11/24/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <url>/2021/11/24/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><h2 id="非"><a href="#非" class="headerlink" title="非 !"></a>非 !</h2><p>   //若a为真，则!a为假；若a为假，则!a为真<br>    int a = 10;<br>    cout &lt;&lt; !a &lt;&lt; endl;<br>    cout &lt;&lt; !!a &lt;&lt; endl;</p><h2 id="或"><a href="#或" class="headerlink" title="或 ||"></a>或 ||</h2><pre><code>//a||b,a或b有真即为真，都为假则为假int b = 0;cout &lt;&lt;( a || b) &lt;&lt; endl;</code></pre><h2 id="与-amp-amp"><a href="#与-amp-amp" class="headerlink" title="与 &amp;&amp;"></a>与 &amp;&amp;</h2><pre><code>//a&amp;&amp;b,两者都为真才为真，有假则为假cout &lt;&lt;( a&amp;&amp;b) &lt;&lt; endl;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>比较运算符</title>
+    <link href="/2021/11/24/%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <url>/2021/11/24/%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><h3 id="等于"><a href="#等于" class="headerlink" title="等于 =="></a>等于 ==</h3><pre><code>cout &lt;&lt; (a == b) &lt;&lt; endl;</code></pre><h2 id="不等于"><a href="#不等于" class="headerlink" title="不等于 !="></a>不等于 !=</h2><pre><code>cout &lt;&lt; (a != b) &lt;&lt; endl;</code></pre><h2 id="大于-gt"><a href="#大于-gt" class="headerlink" title="大于 &gt;"></a>大于 &gt;</h2><pre><code>cout &lt;&lt; (a &gt; b) &lt;&lt; endl;</code></pre><h2 id="小于-lt"><a href="#小于-lt" class="headerlink" title="小于 &lt;"></a>小于 &lt;</h2><pre><code>cout &lt;&lt; (a &lt; b) &lt;&lt; endl;</code></pre><h2 id="大于等于-gt"><a href="#大于等于-gt" class="headerlink" title="大于等于 &gt;="></a>大于等于 &gt;=</h2><pre><code>cout &lt;&lt; (a &gt;= b) &lt;&lt; endl;</code></pre><h2 id="小于等于-lt"><a href="#小于等于-lt" class="headerlink" title="小于等于 &lt;="></a>小于等于 &lt;=</h2><pre><code>cout &lt;&lt; (a &lt;= b) &lt;&lt; endl;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>赋值运算符</title>
+    <link href="/2021/11/24/%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <url>/2021/11/24/%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><h3 id=""><a href="#" class="headerlink" title="="></a>=</h3><pre><code>int a;a = 10;cout &lt;&lt; &quot;a=&quot; &lt;&lt; a &lt;&lt; endl;</code></pre><h2 id="-1"><a href="#-1" class="headerlink" title="+="></a>+=</h2><pre><code>int b = 10;b += 1;  //相当于将b+1的值赋给bcout &lt;&lt; &quot;b=&quot; &lt;&lt; b &lt;&lt; endl;</code></pre><h2 id="-2"><a href="#-2" class="headerlink" title="-="></a>-=</h2><pre><code>int c = 10;c -= 1; cout &lt;&lt; &quot;c=&quot; &lt;&lt; c &lt;&lt; endl;</code></pre><h2 id="-3"><a href="#-3" class="headerlink" title="*="></a>*=</h2><pre><code>int d = 10;d *= 2;cout &lt;&lt; &quot;d=&quot; &lt;&lt; d &lt;&lt; endl;</code></pre><h2 id="-4"><a href="#-4" class="headerlink" title="/="></a>/=</h2><pre><code>double e = 10;e /= 2;cout &lt;&lt; &quot;e=&quot; &lt;&lt; e &lt;&lt; endl;</code></pre><h2 id="-5"><a href="#-5" class="headerlink" title="%="></a>%=</h2><pre><code>int f = 10;f %= 3;cout &lt;&lt; &quot;f=&quot; &lt;&lt; f &lt;&lt; endl;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>运算符</title>
+    <link href="/2021/11/24/%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <url>/2021/11/24/%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="加法"><a href="#加法" class="headerlink" title="加法 +"></a>加法 +</h3><pre><code>//加法 +int num1 = 10, num2 = 3;cout &lt;&lt; num1 + num2 &lt;&lt; endl;</code></pre><h3 id="减法"><a href="#减法" class="headerlink" title="减法 -"></a>减法 -</h3><pre><code>//减法cout &lt;&lt; num1 - num2 &lt;&lt; endl;</code></pre><h3 id="乘法"><a href="#乘法" class="headerlink" title="乘法 *"></a>乘法 *</h3><pre><code>//乘法cout &lt;&lt; num1*num2 &lt;&lt; endl;</code></pre><h3 id="除法"><a href="#除法" class="headerlink" title="除法 /"></a>除法 /</h3><pre><code>//除法cout &lt;&lt; num1 / num2 &lt;&lt; endl;//两个整数相除的运算结果只保留整数位/*被除数不能为0，否则会报错int num3 = 0;cout &lt;&lt; num1 / num3 &lt;&lt; endl;*///两个小数相除double num3 = 3.0;cout &lt;&lt; num1/num3 &lt;&lt; endl;</code></pre><h3 id="取余"><a href="#取余" class="headerlink" title="取余 %"></a>取余 %</h3><pre><code>//取余cout &lt;&lt; num1%num2 &lt;&lt; endl;</code></pre><h3 id="前置递增"><a href="#前置递增" class="headerlink" title="前置递增"></a>前置递增</h3><pre><code>// 前置递增int a1 = 10;++a1;cout &lt;&lt;&quot;a1=&quot; &lt;&lt; a1 &lt;&lt; endl;</code></pre><h3 id="后置递增"><a href="#后置递增" class="headerlink" title="后置递增"></a>后置递增</h3><pre><code>//后置递增int b1 = 10;b1++;cout &lt;&lt;&quot;b1=&quot; &lt;&lt; b1 &lt;&lt; endl;</code></pre><h3 id="前置和后置的区别"><a href="#前置和后置的区别" class="headerlink" title="前置和后置的区别"></a>前置和后置的区别</h3><pre><code>/*前置递增是先让操作数加1，再进行表达式的运算；后置递增是先进行表达数的运算，再将其加1 */int a2 = 5, b2 = 5;cout &lt;&lt; &quot;a2=&quot; &lt;&lt; ++a2 &lt;&lt; endl;//前置cout &lt;&lt; &quot;b2=&quot; &lt;&lt; b2++ &lt;&lt; endl;//后置</code></pre><h3 id="前置和后置递减同理"><a href="#前置和后置递减同理" class="headerlink" title="前置和后置递减同理"></a>前置和后置递减同理</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数据的输入</title>
+    <link href="/2021/11/24/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BE%93%E5%85%A5/"/>
+    <url>/2021/11/24/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BE%93%E5%85%A5/</url>
+    
+    <content type="html"><![CDATA[<h2 id="数据的输入"><a href="#数据的输入" class="headerlink" title="数据的输入"></a>数据的输入</h2><h3 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h3><pre><code>int num = 1;cout &lt;&lt; &quot;请输入整数的值：&quot; &lt;&lt; endl;cin &gt;&gt; num;cout &lt;&lt; &quot;num = &quot; &lt;&lt; num &lt;&lt; endl;</code></pre><h3 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h3><pre><code>float num = 3.14l;cout &lt;&lt; &quot;请输入num的数值：&quot; &lt;&lt; endl;cin &gt;&gt; num;cout &lt;&lt; &quot;num=&quot; &lt;&lt; num&lt;&lt;endl;</code></pre><h3 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h3><pre><code>char ch = &#39;A&#39;;cout &lt;&lt; &quot;请输入ch的字符：&quot; &lt;&lt; endl;cin &gt;&gt; ch;cout &lt;&lt; &quot;ch=&quot; &lt;&lt; ch &lt;&lt; endl;</code></pre><h3 id="字符串型"><a href="#字符串型" class="headerlink" title="字符串型"></a>字符串型</h3><pre><code>string str = &quot;hello&quot;;cout &lt;&lt; &quot;请输入字符串：&quot; &lt;&lt; endl;cin &gt;&gt; str;cout &lt;&lt; &quot;str=&quot; &lt;&lt; str &lt;&lt; endl;</code></pre><h3 id="bool型"><a href="#bool型" class="headerlink" title="bool型"></a>bool型</h3><pre><code>bool flag = false;cout &lt;&lt; &quot;请输入flag的值&quot; &lt;&lt; endl;cin &gt;&gt; flag;cout &lt;&lt; &quot;flag=&quot; &lt;&lt; flag &lt;&lt; endl;</code></pre><hr>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>数据结构</title>
     <link href="/2021/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     <url>/2021/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
