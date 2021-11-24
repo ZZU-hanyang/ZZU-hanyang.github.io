@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>三目运算符</title>
+    <link href="/2021/11/24/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <url>/2021/11/24/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    
+    <content type="html"><![CDATA[<p>/*<br>    表达式1 ? 表达式2 ： 表达式3<br>    如果表达式1为真，则运算结果返回表达式2，否则返回表达式3<br>    三目运算符返回的是变量，返回结果还可以继续被赋值<br>*/</p><p>int a = 10, b = 20;<br>int c;<br>c = (a &gt; b ? a : b);  //将a和b中较大的数值赋给c<br>cout &lt;&lt; “c=” &lt;&lt; c &lt;&lt; endl;</p><p>(a &lt; b ? a : b) = 100;//将a和b中较小的变量赋值为100<br>cout &lt;&lt; “a=” &lt;&lt; a &lt;&lt; endl;<br>cout &lt;&lt; “b=” &lt;&lt; b &lt;&lt; endl;</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>switch语句</title>
+    <link href="/2021/11/24/switch%E8%AF%AD%E5%8F%A5/"/>
+    <url>/2021/11/24/switch%E8%AF%AD%E5%8F%A5/</url>
+    
+    <content type="html"><![CDATA[<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><pre><code>/*    示例：给电影打分 十分制    9~10分  经典    7~8分 非常好    5~6分 一般    低于5分 烂片*/</code></pre><h4 id="1-switch语句的表达式类型只能是整型或字符型的"><a href="#1-switch语句的表达式类型只能是整型或字符型的" class="headerlink" title="1. switch语句的表达式类型只能是整型或字符型的"></a>1. switch语句的表达式类型只能是整型或字符型的</h4><h4 id="2-case里如果没有break，那么程序会一直向下执行"><a href="#2-case里如果没有break，那么程序会一直向下执行" class="headerlink" title="2. case里如果没有break，那么程序会一直向下执行"></a>2. case里如果没有break，那么程序会一直向下执行</h4><h4 id="3-与if语句相比，switch语句在进行多条件判断的时候，结构更加清晰，执行效率更高"><a href="#3-与if语句相比，switch语句在进行多条件判断的时候，结构更加清晰，执行效率更高" class="headerlink" title="3. 与if语句相比，switch语句在进行多条件判断的时候，结构更加清晰，执行效率更高"></a>3. 与if语句相比，switch语句在进行多条件判断的时候，结构更加清晰，执行效率更高</h4><h4 id="4-switch语句的缺点是不能判断区间"><a href="#4-switch语句的缺点是不能判断区间" class="headerlink" title="4. switch语句的缺点是不能判断区间"></a>4. switch语句的缺点是不能判断区间</h4><pre><code>int score = 0;cout &lt;&lt; &quot;请输入您要打的分数：&quot;;cin &gt;&gt; score;cout &lt;&lt; &quot;您输入的分数是：&quot; &lt;&lt; score &lt;&lt; endl;switch (score)&#123;case 10:    cout &lt;&lt; &quot;您认为是经典电影&quot; &lt;&lt; endl; break;case 9:    cout &lt;&lt; &quot;您认为是经典电影&quot; &lt;&lt; endl; break;case 7:    cout &lt;&lt; &quot;您认为电影非常好&quot; &lt;&lt; endl; break;case 8:    cout &lt;&lt; &quot;您认为电影非常好&quot; &lt;&lt; endl; break;case 5:    cout &lt;&lt; &quot;您认为电影一般&quot; &lt;&lt; endl; break;case 6:    cout &lt;&lt; &quot;您认为电影一般&quot; &lt;&lt; endl; break;default:    cout &lt;&lt; &quot;您认为这是部烂片&quot; &lt;&lt; endl; break;&#125;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>逻辑运算符</title>
     <link href="/2021/11/24/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
     <url>/2021/11/24/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
