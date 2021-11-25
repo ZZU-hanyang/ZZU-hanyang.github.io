@@ -16,20 +16,20 @@
   <meta name="description" content="">
   <meta name="author" content="韩阳">
   <meta name="keywords" content="">
-  <meta name="description" content="&#x2F;*    表达式1 ? 表达式2 ： 表达式3    如果表达式1为真，则运算结果返回表达式2，否则返回表达式3    三目运算符返回的是变量，返回结果还可以继续被赋值*&#x2F; int a &#x3D; 10, b &#x3D; 20;int c;c &#x3D; (a &gt; b ? a : b);  &#x2F;&#x2F;将a和b中较大的数值赋给ccout &lt;&lt; “c&#x3D;” &lt;&lt; c &lt;&lt; endl; (a">
+  <meta name="description" content="数组的特点：1.数组中的每个数据都是相同的数据类型2.数据是由连续的内存位置组成的3.数组的下标是从0开始索引的数组的三种定义方式1.数据类型 数据名 [数组长度] ;    int array[10];&#x2F;&#x2F;定义一个长度为10的数组  2.数据类型 数据名 [数组长度] &#x3D; {值1，值2，值3…};    int array[10]&#x3D;&amp;#123;10,20,30&amp;#125;;     注意：10、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="三目运算符">
-<meta property="og:url" content="http://example.com/2021/11/24/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
+<meta property="og:title" content="一维数组">
+<meta property="og:url" content="http://example.com/2021/11/25/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="韩阳">
-<meta property="og:description" content="&#x2F;*    表达式1 ? 表达式2 ： 表达式3    如果表达式1为真，则运算结果返回表达式2，否则返回表达式3    三目运算符返回的是变量，返回结果还可以继续被赋值*&#x2F; int a &#x3D; 10, b &#x3D; 20;int c;c &#x3D; (a &gt; b ? a : b);  &#x2F;&#x2F;将a和b中较大的数值赋给ccout &lt;&lt; “c&#x3D;” &lt;&lt; c &lt;&lt; endl; (a">
+<meta property="og:description" content="数组的特点：1.数组中的每个数据都是相同的数据类型2.数据是由连续的内存位置组成的3.数组的下标是从0开始索引的数组的三种定义方式1.数据类型 数据名 [数组长度] ;    int array[10];&#x2F;&#x2F;定义一个长度为10的数组  2.数据类型 数据名 [数组长度] &#x3D; {值1，值2，值3…};    int array[10]&#x3D;&amp;#123;10,20,30&amp;#125;;     注意：10、">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-24T14:29:37.000Z">
-<meta property="article:modified_time" content="2021-11-24T14:30:55.382Z">
+<meta property="article:published_time" content="2021-11-25T15:17:24.000Z">
+<meta property="article:modified_time" content="2021-11-25T15:18:14.268Z">
 <meta property="article:author" content="韩阳">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>三目运算符 - 韩阳</title>
+  <title>一维数组 - 韩阳</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="三目运算符">
+            <span class="h2" id="subtitle" title="一维数组">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-24 22:29" pubdate>
-        2021年11月24日 晚上
+      <time datetime="2021-11-25 23:17" pubdate>
+        2021年11月25日 晚上
       </time>
     </span>
   
@@ -196,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      268 字
+      1k 字
     </span>
   
 
@@ -205,7 +205,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      3 分钟
     </span>
   
 
@@ -234,12 +234,42 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">三目运算符</h1>
+            <h1 style="display: none">一维数组</h1>
             
             <div class="markdown-body">
-              <p>/*<br>    表达式1 ? 表达式2 ： 表达式3<br>    如果表达式1为真，则运算结果返回表达式2，否则返回表达式3<br>    三目运算符返回的是变量，返回结果还可以继续被赋值<br>*/</p>
-<p>int a = 10, b = 20;<br>int c;<br>c = (a &gt; b ? a : b);  //将a和b中较大的数值赋给c<br>cout &lt;&lt; “c=” &lt;&lt; c &lt;&lt; endl;</p>
-<p>(a &lt; b ? a : b) = 100;//将a和b中较小的变量赋值为100<br>cout &lt;&lt; “a=” &lt;&lt; a &lt;&lt; endl;<br>cout &lt;&lt; “b=” &lt;&lt; b &lt;&lt; endl;</p>
+              <h3 id="数组的特点："><a href="#数组的特点：" class="headerlink" title="数组的特点："></a>数组的特点：</h3><h4 id="1-数组中的每个数据都是相同的数据类型"><a href="#1-数组中的每个数据都是相同的数据类型" class="headerlink" title="1.数组中的每个数据都是相同的数据类型"></a>1.数组中的每个数据都是相同的数据类型</h4><h4 id="2-数据是由连续的内存位置组成的"><a href="#2-数据是由连续的内存位置组成的" class="headerlink" title="2.数据是由连续的内存位置组成的"></a>2.数据是由连续的内存位置组成的</h4><h4 id="3-数组的下标是从0开始索引的"><a href="#3-数组的下标是从0开始索引的" class="headerlink" title="3.数组的下标是从0开始索引的"></a>3.数组的下标是从0开始索引的</h4><h3 id="数组的三种定义方式"><a href="#数组的三种定义方式" class="headerlink" title="数组的三种定义方式"></a>数组的三种定义方式</h3><h4 id="1-数据类型-数据名-数组长度"><a href="#1-数据类型-数据名-数组长度" class="headerlink" title="1.数据类型 数据名 [数组长度] ;"></a>1.数据类型 数据名 [数组长度] ;</h4><pre><code>    int array[10];//定义一个长度为10的数组
+</code></pre>
+<h4 id="2-数据类型-数据名-数组长度-值1，值2，值3…"><a href="#2-数据类型-数据名-数组长度-值1，值2，值3…" class="headerlink" title="2.数据类型 数据名 [数组长度] = {值1，值2，值3…};"></a>2.数据类型 数据名 [数组长度] = {值1，值2，值3…};</h4><pre><code>    int array[10]=&#123;10,20,30&#125;;
+</code></pre>
+<p>   注意：10、20、30会被依次赋给a[0]、a[1]、a[2]，其他未被赋值的会自动被0填充</p>
+<h4 id="3-数据类型-数据名-值1，值2，值3"><a href="#3-数据类型-数据名-值1，值2，值3" class="headerlink" title="3.数据类型 数据名 [] = {值1，值2，值3};"></a>3.数据类型 数据名 [] = {值1，值2，值3};</h4><pre><code>    int array[]=&#123;10,20,30&#125;;
+</code></pre>
+<p>   这种赋值方式下，系统会自动计算出数组长度。这个数组的长度为3。<br>   一种计算数组长度的方法是:</p>
+<h4 id="cout-lt-lt-sizeof-array-sizeof-array-0-lt-lt-endl"><a href="#cout-lt-lt-sizeof-array-sizeof-array-0-lt-lt-endl" class="headerlink" title="cout&lt;&lt;sizeof(array)/sizeof(array[0])&lt;&lt;endl;"></a>cout&lt;&lt;sizeof(array)/sizeof(array[0])&lt;&lt;endl;</h4><hr>
+<h3 id="数组名的用途"><a href="#数组名的用途" class="headerlink" title="数组名的用途"></a>数组名的用途</h3><pre><code>int array[]=&#123;10,20,30&#125;;
+</code></pre>
+<h4 id="1-可以通过数组名统计数组占用的内存大小"><a href="#1-可以通过数组名统计数组占用的内存大小" class="headerlink" title="1.可以通过数组名统计数组占用的内存大小"></a>1.可以通过数组名统计数组占用的内存大小</h4><pre><code>cout&lt;&lt;&quot;整个数组占用的内存空间为：&quot;&lt;&lt;sizeof(array)&lt;&lt;endl;
+cout&lt;&lt;&quot;每个元素占用的内存空间为：&quot;&lt;&lt;sizeof(array[0])&lt;&lt;endl;
+cout&lt;&lt;&quot;数组中的元素个数为：&quot;&lt;&lt;sizeof(array)/sizeof(array[0])&lt;&lt;endl;
+</code></pre>
+<h4 id="2-可以通过数组名查看数组首地址"><a href="#2-可以通过数组名查看数组首地址" class="headerlink" title="2.可以通过数组名查看数组首地址"></a>2.可以通过数组名查看数组首地址</h4><pre><code>cout&lt;&lt;&quot;数组的首地址为：&quot;&lt;&lt;array&lt;&lt;endl;
+cout&lt;&lt;&quot;数组第一个元素的地址为：&quot;&lt;&lt;&amp;array[0]&lt;&lt;endl;
+ 
+</code></pre>
+<h4 id="注意：数组名是一个常量，它指向一段内存空间，不可以进行赋值操作"><a href="#注意：数组名是一个常量，它指向一段内存空间，不可以进行赋值操作" class="headerlink" title="注意：数组名是一个常量，它指向一段内存空间，不可以进行赋值操作"></a>注意：数组名是一个常量，它指向一段内存空间，不可以进行赋值操作</h4><hr>
+<pre><code>//元素逆置
+int arr[]=&#123;1,2,3,4,5&#125;; 
+
+int i,j; 
+j=sizeof(arr)/sizeof(arr[0])-1;////i和j分别代表要交换的两个数组元素的左右下标
+for(i=0;i&lt;j;i++,j--)//循环条件是左下标小于右下标
+&#123;
+    int tem;
+    tem=arr[i];
+    arr[i]=arr[j];
+    arr[j]=tem;    
+&#125; 
+</code></pre>
 
             </div>
             <hr>
@@ -267,9 +297,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/11/25/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/">
+                      <a href="/2021/11/25/goto%E8%AF%AD%E5%8F%A5/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">一维数组</span>
+                        <span class="hidden-mobile">goto语句</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -277,8 +307,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/24/switch%E8%AF%AD%E5%8F%A5/">
-                        <span class="hidden-mobile">switch语句</span>
+                      <a href="/2021/11/24/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/">
+                        <span class="hidden-mobile">三目运算符</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
