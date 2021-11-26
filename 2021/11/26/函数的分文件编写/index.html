@@ -16,20 +16,20 @@
   <meta name="description" content="">
   <meta name="author" content="韩阳">
   <meta name="keywords" content="">
-  <meta name="description" content="goto语句goto语句的作用：无条件跳转goto语句的语法： goto 标签名;标签名： 注意：第一个标签名后面是分号，第二个标签名后面是冒号。标签名一般是大写#include&lt;iostream&gt; using namespace std; int main() &amp;#123;     cout&lt;&lt;&quot;first&quot;&lt;&lt;endl;      cou">
+  <meta name="description" content="1.创建.h后缀名的头文件2.创建.cpp后缀名的源文件3.在头文件中对函数进行声明4.在源文件中对函数进行定义 示例max.h#includeusing namespace std;void max(int num1,int num2);   max.cpp#include “max.h”void max(int num1,int num2) &amp;#123;     cout&lt;&lt; (n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="goto语句">
-<meta property="og:url" content="http://example.com/2021/11/25/goto%E8%AF%AD%E5%8F%A5/index.html">
+<meta property="og:title" content="函数的分文件编写">
+<meta property="og:url" content="http://example.com/2021/11/26/%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/index.html">
 <meta property="og:site_name" content="韩阳">
-<meta property="og:description" content="goto语句goto语句的作用：无条件跳转goto语句的语法： goto 标签名;标签名： 注意：第一个标签名后面是分号，第二个标签名后面是冒号。标签名一般是大写#include&lt;iostream&gt; using namespace std; int main() &amp;#123;     cout&lt;&lt;&quot;first&quot;&lt;&lt;endl;      cou">
+<meta property="og:description" content="1.创建.h后缀名的头文件2.创建.cpp后缀名的源文件3.在头文件中对函数进行声明4.在源文件中对函数进行定义 示例max.h#includeusing namespace std;void max(int num1,int num2);   max.cpp#include “max.h”void max(int num1,int num2) &amp;#123;     cout&lt;&lt; (n">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-25T15:18:35.000Z">
-<meta property="article:modified_time" content="2021-11-25T15:19:06.996Z">
+<meta property="article:published_time" content="2021-11-26T15:08:32.000Z">
+<meta property="article:modified_time" content="2021-11-26T15:10:03.048Z">
 <meta property="article:author" content="韩阳">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>goto语句 - 韩阳</title>
+  <title>函数的分文件编写 - 韩阳</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="goto语句">
+            <span class="h2" id="subtitle" title="函数的分文件编写">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-25 23:18" pubdate>
-        2021年11月25日 晚上
+      <time datetime="2021-11-26 23:08" pubdate>
+        2021年11月26日 晚上
       </time>
     </span>
   
@@ -196,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      400 字
+      431 字
     </span>
   
 
@@ -234,30 +234,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">goto语句</h1>
+            <h1 style="display: none">函数的分文件编写</h1>
             
             <div class="markdown-body">
-              <h2 id="goto语句"><a href="#goto语句" class="headerlink" title="goto语句"></a>goto语句</h2><h3 id="goto语句的作用：无条件跳转"><a href="#goto语句的作用：无条件跳转" class="headerlink" title="goto语句的作用：无条件跳转"></a>goto语句的作用：无条件跳转</h3><h3 id="goto语句的语法："><a href="#goto语句的语法：" class="headerlink" title="goto语句的语法："></a>goto语句的语法：</h3><hr>
-<h4 id="goto-标签名"><a href="#goto-标签名" class="headerlink" title="goto 标签名;"></a>goto 标签名;</h4><h4 id="标签名："><a href="#标签名：" class="headerlink" title="标签名："></a>标签名：</h4><hr>
-<h3 id="注意：第一个标签名后面是分号，第二个标签名后面是冒号。"><a href="#注意：第一个标签名后面是分号，第二个标签名后面是冒号。" class="headerlink" title="注意：第一个标签名后面是分号，第二个标签名后面是冒号。"></a>注意：第一个标签名后面是分号，第二个标签名后面是冒号。</h3><h3 id="标签名一般是大写"><a href="#标签名一般是大写" class="headerlink" title="标签名一般是大写"></a>标签名一般是大写</h3><pre><code>#include&lt;iostream&gt;
-using namespace std;
-int main()
-&#123;
-    cout&lt;&lt;&quot;first&quot;&lt;&lt;endl;
-
-    cout&lt;&lt;&quot;second&quot;&lt;&lt;endl;
-    goto FLAG;
-    cout&lt;&lt;&quot;third&quot;&lt;&lt;endl;
-
-    cout&lt;&lt;&quot;forth&quot;&lt;&lt;endl;
-    FLAG:
-    cout&lt;&lt;&quot;fifth&quot;&lt;&lt;endl;
-
-    system(&quot;pause&quot;);
-    return 0;
- &#125; 
+              <h2 id="1-创建-h后缀名的头文件"><a href="#1-创建-h后缀名的头文件" class="headerlink" title="1.创建.h后缀名的头文件"></a>1.创建.h后缀名的头文件</h2><h2 id="2-创建-cpp后缀名的源文件"><a href="#2-创建-cpp后缀名的源文件" class="headerlink" title="2.创建.cpp后缀名的源文件"></a>2.创建.cpp后缀名的源文件</h2><h2 id="3-在头文件中对函数进行声明"><a href="#3-在头文件中对函数进行声明" class="headerlink" title="3.在头文件中对函数进行声明"></a>3.在头文件中对函数进行声明</h2><h2 id="4-在源文件中对函数进行定义"><a href="#4-在源文件中对函数进行定义" class="headerlink" title="4.在源文件中对函数进行定义"></a>4.在源文件中对函数进行定义</h2><hr>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h2 id="max-h"><a href="#max-h" class="headerlink" title="max.h"></a>max.h</h2><h3 id="include"><a href="#include" class="headerlink" title="#include"></a>#include<iostream></h3><h3 id="using-namespace-std"><a href="#using-namespace-std" class="headerlink" title="using namespace std;"></a>using namespace std;</h3><pre><code>void max(int num1,int num2);
 </code></pre>
-
+<hr>
+<h2 id="max-cpp"><a href="#max-cpp" class="headerlink" title="max.cpp"></a>max.cpp</h2><h3 id="include-“max-h”"><a href="#include-“max-h”" class="headerlink" title="#include “max.h”"></a>#include “max.h”</h3><pre><code>void max(int num1,int num2)
+&#123;
+    cout&lt;&lt; (num1 &gt; num2 ? num1 : num2)&lt;&lt;endl;
+&#125;
+</code></pre>
+<hr>
+<h2 id="main-cpp"><a href="#main-cpp" class="headerlink" title="main.cpp"></a>main.cpp</h2><h3 id="include-1"><a href="#include-1" class="headerlink" title="#include"></a>#include<iostream></h3><h3 id="include-“max-h”-1"><a href="#include-“max-h”-1" class="headerlink" title="#include “max.h”"></a>#include “max.h”</h3><h3 id="using-namespace-std-1"><a href="#using-namespace-std-1" class="headerlink" title="using namespace std;"></a>using namespace std;</h3><pre><code>int main()
+&#123;
+    int a=10,b=20;
+  max(a,b);
+&#125;
+</code></pre>
+<hr>
+<h3 id="注意：加粗部分为重点，与C语言有所不同，这里没用-ifndef和-endif，并且在函数源文件中需要调用该函数对应的头文件，因为该头文件已经调用了-include和using-namespace-std-因此在函数的调用中不需要再次进行书写"><a href="#注意：加粗部分为重点，与C语言有所不同，这里没用-ifndef和-endif，并且在函数源文件中需要调用该函数对应的头文件，因为该头文件已经调用了-include和using-namespace-std-因此在函数的调用中不需要再次进行书写" class="headerlink" title="注意：加粗部分为重点，与C语言有所不同，这里没用#ifndef和#endif，并且在函数源文件中需要调用该函数对应的头文件，因为该头文件已经调用了#include和using namespace std ,因此在函数的调用中不需要再次进行书写"></a>注意：加粗部分为重点，与C语言有所不同，这里没用#ifndef和#endif，并且在函数源文件中需要调用该函数对应的头文件，因为该头文件已经调用了#include<iostream>和using namespace std ,因此在函数的调用中不需要再次进行书写</h3>
             </div>
             <hr>
             <div>
@@ -284,9 +281,9 @@ int main()
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/11/26/%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/">
+                      <a href="/2021/11/26/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">函数的分文件编写</span>
+                        <span class="hidden-mobile">二维数组</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -294,8 +291,8 @@ int main()
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/25/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/">
-                        <span class="hidden-mobile">一维数组</span>
+                      <a href="/2021/11/25/goto%E8%AF%AD%E5%8F%A5/">
+                        <span class="hidden-mobile">goto语句</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
