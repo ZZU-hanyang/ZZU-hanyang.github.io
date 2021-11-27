@@ -16,18 +16,38 @@
   <meta name="description" content="">
   <meta name="author" content="韩阳">
   <meta name="keywords" content="">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://example.com/tags/index.html">
+  <meta name="description" content="利用指针访问数组一维数组int arr[10]&#x3D;&amp;#123;0,1,2,3,4,5,6,7,8,9&amp;#125;;  int *p&#x3D;arr;&#x2F;&#x2F;数组名就是的值就是数组的首地址 int i; for(i&#x3D;0;i&lt;10;i++) &amp;#123;     cout&lt;&lt;*p&lt;&lt;endl;     &amp;#125;   二维数组未完待续。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指针和数组">
+<meta property="og:url" content="http://example.com/2021/11/27/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="韩阳">
+<meta property="og:description" content="利用指针访问数组一维数组int arr[10]&#x3D;&amp;#123;0,1,2,3,4,5,6,7,8,9&amp;#125;;  int *p&#x3D;arr;&#x2F;&#x2F;数组名就是的值就是数组的首地址 int i; for(i&#x3D;0;i&lt;10;i++) &amp;#123;     cout&lt;&lt;*p&lt;&lt;endl;     &amp;#125;   二维数组未完待续。。。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-27T14:32:06.000Z">
+<meta property="article:modified_time" content="2021-11-27T14:37:40.797Z">
 <meta property="article:author" content="韩阳">
+<meta property="article:tag" content="C++ 未完待续">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>标签 - 韩阳</title>
+  <title>指针和数组 - 韩阳</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -54,7 +74,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -155,17 +175,47 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签">
+            <span class="h2" id="subtitle" title="指针和数组">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-27 22:32" pubdate>
+        2021年11月27日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      157 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -174,24 +224,96 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center tagcloud">
-  <a href="/tags/C/" style="font-size: 30px; color: #337ab7">C++</a> <a href="/tags/C-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/" style="font-size: 15px; color: #bbe">C++ 未完待续</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 15px; color: #bbe">测试</a>
-</div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">指针和数组</h1>
+            
+            <div class="markdown-body">
+              <h2 id="利用指针访问数组"><a href="#利用指针访问数组" class="headerlink" title="利用指针访问数组"></a>利用指针访问数组</h2><h3 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h3><pre><code>int arr[10]=&#123;0,1,2,3,4,5,6,7,8,9&#125;;
 
-              </div>
+int *p=arr;//数组名就是的值就是数组的首地址
+int i;
+for(i=0;i&lt;10;i++)
+&#123;
+    cout&lt;&lt;*p&lt;&lt;endl;    
+&#125; 
+</code></pre>
+<h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><h3 id="未完待续。。。"><a href="#未完待续。。。" class="headerlink" title="未完待续。。。"></a>未完待续。。。</h3>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/C-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/">C++ 未完待续</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/27/%E7%94%A8%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">用指针实现冒泡排序</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/27/%E6%8C%87%E9%92%88/">
+                        <span class="hidden-mobile">指针</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -274,6 +396,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 

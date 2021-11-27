@@ -4,6 +4,139 @@
   
   
   <entry>
+    <title>结构体做函数参数</title>
+    <link href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/"/>
+    <url>/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<h3 id="地址传递"><a href="#地址传递" class="headerlink" title="地址传递"></a>地址传递</h3><h4 id="可以将结构体的地址传递进函数，在函数中对结构体进行访问和修改"><a href="#可以将结构体的地址传递进函数，在函数中对结构体进行访问和修改" class="headerlink" title="可以将结构体的地址传递进函数，在函数中对结构体进行访问和修改"></a>可以将结构体的地址传递进函数，在函数中对结构体进行访问和修改</h4><h3 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h3><h4 id="可以将结构体变量的值传递进函数，不能对结构体进行修改，相当于形参"><a href="#可以将结构体变量的值传递进函数，不能对结构体进行修改，相当于形参" class="headerlink" title="可以将结构体变量的值传递进函数，不能对结构体进行修改，相当于形参"></a>可以将结构体变量的值传递进函数，不能对结构体进行修改，相当于形参</h4><pre><code>#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;//定义一个结构体struct student&#123;    string name;    int age;    int score;&#125;; //两个打印学生信息函数的声明void printStudent1(student stu); void printStudent2(student *p);int main()&#123;    student s;    s.name=&quot;张三&quot;;    s.age=20;    s.score=80;    printStudent1(s);//值传递     printStudent2(&amp;s);//地址传递     cout&lt;&lt;&quot;在主函数中&quot;&lt;&lt;&quot; 姓名：&quot;&lt;&lt;s.name&lt;&lt;&quot; 年龄：&quot;&lt;&lt;s.age&lt;&lt;&quot; 分数：&quot;&lt;&lt;s.score&lt;&lt;endl;    system(&quot;pause&quot;);    return 0;&#125;//值传递 void printStudent1(student stu)&#123;    //对形参进行的修改    stu.name=&quot;李四&quot;;    cout&lt;&lt;&quot;在子函数1中&quot;&lt;&lt;&quot; 姓名：&quot;&lt;&lt;stu.name&lt;&lt;&quot; 年龄：&quot;&lt;&lt;stu.age&lt;&lt;&quot; 分数：&quot;&lt;&lt;stu.score&lt;&lt;endl; &#125;//地址传递 void printStudent2(student *p)&#123;    //对实参进行的修改    p-&gt;name=&quot;王五&quot;;    cout&lt;&lt;&quot;在子函数2中&quot;&lt;&lt;&quot; 姓名：&quot;&lt;&lt;p-&gt;name&lt;&lt;&quot; 年龄：&quot;&lt;&lt;p-&gt;age&lt;&lt;&quot; 分数：&quot;&lt;&lt;p-&gt;score&lt;&lt;endl;&#125;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>结构体的嵌套</title>
+    <link href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%B5%8C%E5%A5%97/"/>
+    <url>/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%B5%8C%E5%A5%97/</url>
+    
+    <content type="html"><![CDATA[<h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><h4 id="结构体的成员可以是另一个结构体"><a href="#结构体的成员可以是另一个结构体" class="headerlink" title="结构体的成员可以是另一个结构体"></a>结构体的成员可以是另一个结构体</h4><pre><code>#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;struct student&#123;    string name;//学生姓名     int age;//学生年龄     int score;//学生成绩 &#125; ; struct teacher &#123;    string name;//教师姓名     int ID;//职工编号     int age;//教师年龄     student stu;//教师辅导的学生 &#125;;int main()&#123;    teacher t;    t.name=&quot;老王&quot;;    t.ID=4396;    t.age=40;    t.stu.name=&quot;小王&quot;;    t.stu.age=18;    t.stu.score=100;     cout&lt;&lt;&quot;教师：&quot;&lt;&lt;t.name&lt;&lt;endl;     cout&lt;&lt;&quot;年龄：&quot;&lt;&lt;t.age&lt;&lt;endl;     cout&lt;&lt;&quot;职工编号：&quot;&lt;&lt;t.ID&lt;&lt;endl;     cout&lt;&lt;&quot;辅导学生：&quot;&lt;&lt;t.stu.name&lt;&lt;endl;     cout&lt;&lt;&quot;学生年龄：&quot;&lt;&lt;t.stu.age&lt;&lt;endl;     cout&lt;&lt;&quot;学生成绩：&quot;&lt;&lt;t.stu.score&lt;&lt;endl;     system(&quot;pause&quot;);    return 0;&#125;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>结构体指针</title>
+    <link href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88/"/>
+    <url>/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1-定义结构体"><a href="#1-定义结构体" class="headerlink" title="1.定义结构体"></a>1.定义结构体</h3><pre><code>    struct student&#123;    string name;    int age;    int score;&#125;; </code></pre><h3 id="1-创建结构体指针"><a href="#1-创建结构体指针" class="headerlink" title="1.创建结构体指针"></a>1.创建结构体指针</h3><pre><code>//该结构体只有一个元素student Stu=&#123;&quot;张三&quot;,19,100&#125;;    </code></pre><h3 id="2-通过指针指向结构体变量"><a href="#2-通过指针指向结构体变量" class="headerlink" title="2.通过指针指向结构体变量"></a>2.通过指针指向结构体变量</h3><pre><code>    //通过结构体指针指向该结构体，该指针的类型和结构体一致    student *p = &amp;Stu;</code></pre><h3 id="3-通过指针访问结构体变量中的数据"><a href="#3-通过指针访问结构体变量中的数据" class="headerlink" title="3.通过指针访问结构体变量中的数据"></a>3.通过指针访问结构体变量中的数据</h3><pre><code>//通过指针访问结构体变量中的数据//需要用到  &quot;-&gt;&quot;  符号来进行操作 cout&lt;&lt;&quot;姓名：&quot;&lt;&lt;p-&gt;name&lt;&lt;endlcout&lt;&lt;&quot;年龄：&quot; &lt;&lt;p-&gt;age&lt;&lt;endlcout&lt;&lt;&quot;分数：&quot;&lt;&lt;p-&gt;score&lt;&lt;endl;</code></pre><h3 id="注意：-gt-是结构体指针访问结构体数据的符号"><a href="#注意：-gt-是结构体指针访问结构体数据的符号" class="headerlink" title="注意：  -&gt; 是结构体指针访问结构体数据的符号"></a>注意：  -&gt; 是结构体指针访问结构体数据的符号</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>结构体</title>
+    <link href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93/"/>
+    <url>/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93/</url>
+    
+    <content type="html"><![CDATA[<h3 id="结构体的定义"><a href="#结构体的定义" class="headerlink" title="结构体的定义"></a>结构体的定义</h3><pre><code>struct 结构体名&#123;    数据类型 数据名；        数据类型 数据名；        数据类型 数据名&#125;；</code></pre><h3 id="创建结构体数组"><a href="#创建结构体数组" class="headerlink" title="创建结构体数组"></a>创建结构体数组</h3><pre><code>struct 结构体名 数组名[元素个数]=&#123;    &#123;&#125;,    &#123;&#125;,        &#123;&#125;,        &#123;&#125;&#125;;</code></pre><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre><code>#include&lt;iostream&gt;#include&lt;string&gt; using namespace std;//结构体的定义struct student &#123;    string name;    int age;    int score;&#125;; int main()&#123;    //结构体的创建    struct student stuArray[4]=    &#123;        &#123;&quot;刘备&quot;,18,97&#125;,        &#123;&quot;关羽&quot;,20,90&#125;,        &#123;&quot;张飞&quot;,19,99&#125;,        &#123;&quot;赵云&quot;,21,98&#125;    &#125;;//结构体元素的赋值    stuArray[2].name=&quot;诸葛亮&quot;;    stuArray[2].age=99;    stuArray[2].score=100;//结构体的遍历访问    for(int i=0;i&lt;4;i++)    &#123;        cout&lt;&lt;stuArray[i].name&lt;&lt;&quot;: &quot;        &lt;&lt;stuArray[i].age&lt;&lt;&quot;岁 &quot;        &lt;&lt;stuArray[i].score&lt;&lt;&quot;分&quot;&lt;&lt;endl;     &#125;    system(&quot;pause&quot;);    return 0;&#125;</code></pre><h3 id="注意：定义或者创建完结构体之后，末尾要加分号；"><a href="#注意：定义或者创建完结构体之后，末尾要加分号；" class="headerlink" title="注意：定义或者创建完结构体之后，末尾要加分号；"></a>注意：定义或者创建完结构体之后，末尾要加分号；</h3><h3 id="在定义完成结构体之后，后续的结构体在创建和赋值时可以省略关键字struct"><a href="#在定义完成结构体之后，后续的结构体在创建和赋值时可以省略关键字struct" class="headerlink" title="在定义完成结构体之后，后续的结构体在创建和赋值时可以省略关键字struct"></a>在定义完成结构体之后，后续的结构体在创建和赋值时可以省略关键字struct</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>用指针实现冒泡排序</title>
+    <link href="/2021/11/27/%E7%94%A8%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"/>
+    <url>/2021/11/27/%E7%94%A8%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><pre><code>#include&lt;iostream&gt;using namespace std;void bubbleSort(int *arr,int len);void printArray(int *arr,int len);int main()&#123;    //冒泡排序    int arr[10]=&#123;4,6,8,0,3,7,9,1,5,2&#125;;    bubbleSort(arr,10);    printArray(arr,10);     system(&quot;pause&quot;);    return 0;&#125;void bubbleSort(int *arr,int len)&#123;     for(int i=0;i&lt;len-1;i++)    &#123;        for(int j=0;j&lt;len-i-1;j++)        &#123;            if(arr[j]&gt;arr[j+1])            &#123;                int tem=arr[j];                arr[j]=arr[j+1];                arr[j+1]=tem;            &#125;        &#125;    &#125;&#125;void printArray(int *arr,int len)&#123;    for(int i=0;i&lt;len;i++)    &#123;        cout&lt;&lt;*arr&lt;&lt;endl;        arr++;    &#125;&#125;</code></pre><hr><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><h4 id="在调用函数时，如果传入的是指针，比如数组的指针arr时，可以用arr-i-的形式访问和修改其中的元素"><a href="#在调用函数时，如果传入的是指针，比如数组的指针arr时，可以用arr-i-的形式访问和修改其中的元素" class="headerlink" title="在调用函数时，如果传入的是指针，比如数组的指针arr时，可以用arr[i]的形式访问和修改其中的元素"></a>在调用函数时，如果传入的是指针，比如数组的指针arr时，可以用arr[i]的形式访问和修改其中的元素</h4>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>指针和数组</title>
+    <link href="/2021/11/27/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/"/>
+    <url>/2021/11/27/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/</url>
+    
+    <content type="html"><![CDATA[<h2 id="利用指针访问数组"><a href="#利用指针访问数组" class="headerlink" title="利用指针访问数组"></a>利用指针访问数组</h2><h3 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h3><pre><code>int arr[10]=&#123;0,1,2,3,4,5,6,7,8,9&#125;;int *p=arr;//数组名就是的值就是数组的首地址int i;for(i=0;i&lt;10;i++)&#123;    cout&lt;&lt;*p&lt;&lt;endl;    &#125; </code></pre><h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><h3 id="未完待续。。。"><a href="#未完待续。。。" class="headerlink" title="未完待续。。。"></a>未完待续。。。</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++ 未完待续</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>指针</title>
+    <link href="/2021/11/27/%E6%8C%87%E9%92%88/"/>
+    <url>/2021/11/27/%E6%8C%87%E9%92%88/</url>
+    
+    <content type="html"><![CDATA[<h2 id="指针的作用"><a href="#指针的作用" class="headerlink" title="指针的作用"></a>指针的作用</h2><h4 id="可以通过指针间接访问内存"><a href="#可以通过指针间接访问内存" class="headerlink" title="可以通过指针间接访问内存"></a>可以通过指针间接访问内存</h4><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><h3 id="1-内存编号一般是从0开始记录的，一般用16进制数字表示"><a href="#1-内存编号一般是从0开始记录的，一般用16进制数字表示" class="headerlink" title="1.内存编号一般是从0开始记录的，一般用16进制数字表示"></a>1.内存编号一般是从0开始记录的，一般用16进制数字表示</h3><h3 id="2-可以利用指针变量保存地址"><a href="#2-可以利用指针变量保存地址" class="headerlink" title="2.可以利用指针变量保存地址"></a>2.可以利用指针变量保存地址</h3><hr><h2 id="指针的定义和使用"><a href="#指针的定义和使用" class="headerlink" title="指针的定义和使用"></a>指针的定义和使用</h2><h3 id="1-语法：数据类型-变量名"><a href="#1-语法：数据类型-变量名" class="headerlink" title="1.语法：数据类型 * 变量名"></a>1.语法：数据类型 * 变量名</h3><h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><pre><code>int a = 10 ;int *p;p = &amp;a;   // 或者 int *p = &amp;a;</code></pre><h3 id="2-指针变量的赋值"><a href="#2-指针变量的赋值" class="headerlink" title="2.指针变量的赋值"></a>2.指针变量的赋值</h3><pre><code>p1=&amp;a;//将a的地址赋给p1cout&lt;&lt;&quot;a的地址：&quot;&lt;&lt;&amp;a&lt;&lt;endl;cout&lt;&lt;&quot;p1的值：&quot;&lt;&lt;p1&lt;&lt;endl; </code></pre><h3 id="3-指针变量的解引用"><a href="#3-指针变量的解引用" class="headerlink" title="3.指针变量的解引用"></a>3.指针变量的解引用</h3><pre><code>cout&lt;&lt;&quot;指针p1指向的数据：&quot;&lt;&lt;*p1&lt;&lt;endl; </code></pre><h3 id="4-指针占用的内存空间"><a href="#4-指针占用的内存空间" class="headerlink" title="4.指针占用的内存空间"></a>4.指针占用的内存空间</h3><pre><code>cout&lt;&lt;&quot;指针p1占用的内存空间：&quot;&lt;&lt;sizeof(p1)&lt;&lt;endl;cout&lt;&lt;&quot;整型指针占用的内存空间：&quot;&lt;&lt;sizeof(int *)&lt;&lt;endl;cout&lt;&lt;&quot;float型指针占用的内存空间：&quot;&lt;&lt;sizeof(float *)&lt;&lt;endl;cout&lt;&lt;&quot;double型指针占用的内存空间：&quot;&lt;&lt;sizeof(double *)&lt;&lt;endl;</code></pre><h4 id="指针变量占用的内存空间不随指向的数据类型的变化而变化。"><a href="#指针变量占用的内存空间不随指向的数据类型的变化而变化。" class="headerlink" title="指针变量占用的内存空间不随指向的数据类型的变化而变化。"></a>指针变量占用的内存空间不随指向的数据类型的变化而变化。</h4><hr><h3 id="空指针"><a href="#空指针" class="headerlink" title="空指针"></a>空指针</h3><h4 id="指针变量指向内存地址编号为0的空间"><a href="#指针变量指向内存地址编号为0的空间" class="headerlink" title="指针变量指向内存地址编号为0的空间"></a>指针变量指向内存地址编号为0的空间</h4><h3 id="用途：初始化指针变量"><a href="#用途：初始化指针变量" class="headerlink" title="用途：初始化指针变量"></a>用途：初始化指针变量</h3><h3 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h3><h4 id="1-内存地址编号在0-255为系统占用内存，不允许访问"><a href="#1-内存地址编号在0-255为系统占用内存，不允许访问" class="headerlink" title="1.内存地址编号在0~255为系统占用内存，不允许访问"></a>1.内存地址编号在0~255为系统占用内存，不允许访问</h4><h4 id="2-访问空指针会报错"><a href="#2-访问空指针会报错" class="headerlink" title="2.访问空指针会报错"></a>2.访问空指针会报错</h4><pre><code>int *p = NULL;//定义一个空指针</code></pre><hr><h3 id="野指针"><a href="#野指针" class="headerlink" title="野指针"></a>野指针</h3><h4 id="指针变量指向了非法的内存空间"><a href="#指针变量指向了非法的内存空间" class="headerlink" title="指针变量指向了非法的内存空间"></a>指针变量指向了非法的内存空间</h4><h4 id="例如：-1"><a href="#例如：-1" class="headerlink" title="例如："></a>例如：</h4><pre><code>int *p；p = 0x1100;//指针p指向的内存空间未经过申请，这个指针是野指针</code></pre><h3 id="注意：程序设计中应尽量避免出现野指针，用野指针进行访问会报错"><a href="#注意：程序设计中应尽量避免出现野指针，用野指针进行访问会报错" class="headerlink" title="注意：程序设计中应尽量避免出现野指针，用野指针进行访问会报错"></a>注意：程序设计中应尽量避免出现野指针，用野指针进行访问会报错</h3><hr><h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><pre><code>int a=10;int b=20;</code></pre><h4 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h4><h4 id="特点：指针的指向可以被修改，但是指针指向的值不能被修改-是指不能通过解引用的方式修改指针指向的内容"><a href="#特点：指针的指向可以被修改，但是指针指向的值不能被修改-是指不能通过解引用的方式修改指针指向的内容" class="headerlink" title="特点：指针的指向可以被修改，但是指针指向的值不能被修改(是指不能通过解引用的方式修改指针指向的内容)"></a>特点：指针的指向可以被修改，但是指针指向的值不能被修改(是指不能通过解引用的方式修改指针指向的内容)</h4><pre><code>const int *p1=&amp;a;/*    a=20;//将20赋给变量a是合法的    *p1=20//利用解引用的方式改变p1指向的内容是非法的    p1=&amp;b//可以改变指针p1的指向，让其指向其他内存区域 */</code></pre><h4 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h4><h4 id="特点：指针的指向是不可以被修改的，但是可以用指针修改指针指向的内容"><a href="#特点：指针的指向是不可以被修改的，但是可以用指针修改指针指向的内容" class="headerlink" title="特点：指针的指向是不可以被修改的，但是可以用指针修改指针指向的内容"></a>特点：指针的指向是不可以被修改的，但是可以用指针修改指针指向的内容</h4><pre><code>int *const p2=&amp;a;/*    p2=&amp;b; //将指针指向p2是非法的    *p2=20;//用解引用的方式改变指针p2指向的内存空间的数据是合法的 */ </code></pre><h4 id="const既修饰指针也修饰变量"><a href="#const既修饰指针也修饰变量" class="headerlink" title="const既修饰指针也修饰变量"></a>const既修饰指针也修饰变量</h4><pre><code>const int *const p3 = &amp;a;</code></pre><h4 id="指针的指向不能被修改，也不能用解引用的方式修改指针指向的内容"><a href="#指针的指向不能被修改，也不能用解引用的方式修改指针指向的内容" class="headerlink" title="指针的指向不能被修改，也不能用解引用的方式修改指针指向的内容"></a>指针的指向不能被修改，也不能用解引用的方式修改指针指向的内容</h4><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><h4 id="const修饰哪个，哪个就不能被修改。"><a href="#const修饰哪个，哪个就不能被修改。" class="headerlink" title="const修饰哪个，哪个就不能被修改。"></a>const修饰哪个，哪个就不能被修改。</h4>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>二维数组</title>
     <link href="/2021/11/26/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/"/>
     <url>/2021/11/26/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/</url>
