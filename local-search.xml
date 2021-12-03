@@ -4,6 +4,101 @@
   
   
   <entry>
+    <title>引用做函数返回值</title>
+    <link href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC/"/>
+    <url>/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC/</url>
+    
+    <content type="html"><![CDATA[<h3 id="不要返回局部变量的引用"><a href="#不要返回局部变量的引用" class="headerlink" title="不要返回局部变量的引用"></a>不要返回局部变量的引用</h3><h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><pre><code>int &amp;func1()&#123;    int a=10;    return a;//用引用的方式返回局部变量，即返回值是局部变量的别名 &#125;在主函数中进行调用：int &amp;p=func1();cout&lt;&lt;p&lt;&lt;endl;//第一次输出正确是因为编译器作了保留 cout&lt;&lt;p&lt;&lt;endl;//第二次输出错误是因为函数在执行完之后，局部变量占据的内存被释放了 </code></pre><h3 id="函数的调用可以作为左值"><a href="#函数的调用可以作为左值" class="headerlink" title="函数的调用可以作为左值"></a>函数的调用可以作为左值</h3><pre><code>int &amp;func2()&#123;    static int b=20;//静态变量，存放在全局区，全局区的数据会在程序结束后由系统释放掉     return b;&#125;在主函数中进行调用：int &amp;q=func2();//用引用的方式接收函数的返回值 cout&lt;&lt;q&lt;&lt;endl;cout&lt;&lt;q&lt;&lt;endl;//如果函数的返回值是引用，这个函数调用可以作为左值 func2()=1000;//此处的左值相当于静态变量b的别名，相当于对b进行赋值操作 cout&lt;&lt;q&lt;&lt;endl; </code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>引用做函数参数</title>
+    <link href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/"/>
+    <url>/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<h3 id="三种参数传递方式："><a href="#三种参数传递方式：" class="headerlink" title="三种参数传递方式："></a>三种参数传递方式：</h3><h4 id="例如：交换函数"><a href="#例如：交换函数" class="headerlink" title="例如：交换函数"></a>例如：交换函数</h4><h3 id="1、值传递，形参不能修饰实参"><a href="#1、值传递，形参不能修饰实参" class="headerlink" title="1、值传递，形参不能修饰实参"></a>1、值传递，形参不能修饰实参</h3><pre><code>void swap1(int a,int b)&#123;    int temp;    temp=a;    a=b;    b=temp;    cout&lt;&lt;&quot;swap1中的a=&quot;&lt;&lt;a&lt;&lt;endl;    cout&lt;&lt;&quot;swap1中的b=&quot;&lt;&lt;b&lt;&lt;endl;&#125; </code></pre><h3 id="2、地址传递，形参能够修饰实参"><a href="#2、地址传递，形参能够修饰实参" class="headerlink" title="2、地址传递，形参能够修饰实参"></a>2、地址传递，形参能够修饰实参</h3><pre><code>    void swap2(int *a,int *b)&#123;    int temp;    temp=*a;    *a=*b;    *b=temp;    cout&lt;&lt;&quot;swap2中的a=&quot;&lt;&lt;a&lt;&lt;endl;    cout&lt;&lt;&quot;swap2中的b=&quot;&lt;&lt;b&lt;&lt;endl;&#125;</code></pre><h3 id="3、引用传递，形参能够修饰实参"><a href="#3、引用传递，形参能够修饰实参" class="headerlink" title="3、引用传递，形参能够修饰实参"></a>3、引用传递，形参能够修饰实参</h3><pre><code>void swap3(int &amp;a,int &amp;b)&#123;    int temp;    temp=a;    a=b;    b=temp;    cout&lt;&lt;&quot;swap3中的a=&quot;&lt;&lt;a&lt;&lt;endl;    cout&lt;&lt;&quot;swap3中的b=&quot;&lt;&lt;b&lt;&lt;endl;&#125;</code></pre><h3 id="在主函数调用时："><a href="#在主函数调用时：" class="headerlink" title="在主函数调用时："></a>在主函数调用时：</h3><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><h4 id="int-a-10-b-20"><a href="#int-a-10-b-20" class="headerlink" title="int a=10,b=20;"></a>int a=10,b=20;</h4><h4 id="swap-a-b"><a href="#swap-a-b" class="headerlink" title="swap(a,b);"></a>swap(a,b);</h4><h4 id="这里是用引用的方式传递变量a和b，只是原名和别名起的一样，依然可以实现交换变量a和b的功能"><a href="#这里是用引用的方式传递变量a和b，只是原名和别名起的一样，依然可以实现交换变量a和b的功能" class="headerlink" title="这里是用引用的方式传递变量a和b，只是原名和别名起的一样，依然可以实现交换变量a和b的功能"></a>这里是用引用的方式传递变量a和b，只是原名和别名起的一样，依然可以实现交换变量a和b的功能</h4><pre><code>cout&lt;&lt;&quot;主函数中的a=&quot;&lt;&lt;a&lt;&lt;endl;cout&lt;&lt;&quot;主函数中的b=&quot;&lt;&lt;b&lt;&lt;endl;//输出结果为主函数中 a=20,b=10;//在swap3函数中 a=20,b=20; </code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>引用</title>
+    <link href="/2021/12/02/%E5%BC%95%E7%94%A8/"/>
+    <url>/2021/12/02/%E5%BC%95%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h3 id="引用的作用"><a href="#引用的作用" class="headerlink" title="引用的作用"></a>引用的作用</h3><pre><code>作用：给变量起别名</code></pre><h3 id="引用的语法"><a href="#引用的语法" class="headerlink" title="引用的语法"></a>引用的语法</h3><pre><code>语法： 数据类型 &amp;别名 = 原名例如： int a=10; int &amp;b=a;  //a和b的值也是一样的 cout&lt;&lt;&quot;a=&quot;&lt;&lt;a&lt;&lt;endl; cout&lt;&lt;&quot;b=&quot;&lt;&lt;b&lt;&lt;endl;   //输出的a和b的地址都是一样的 cout&lt;&lt;&quot;a的地址为：&quot;&lt;&lt;&amp;a&lt;&lt;endl; cout&lt;&lt;&quot;b的地址为：&quot;&lt;&lt;&amp;b&lt;&lt;endl;  //通过操作别名b也能更改a的值 b=20; cout&lt;&lt;&quot;a=&quot;&lt;&lt;a&lt;&lt;endl; cout&lt;&lt;&quot;b=&quot;&lt;&lt;b&lt;&lt;endl;</code></pre><h3 id="引用的注意事项"><a href="#引用的注意事项" class="headerlink" title="引用的注意事项"></a>引用的注意事项</h3><h4 id="1、引用必须初始化"><a href="#1、引用必须初始化" class="headerlink" title="1、引用必须初始化"></a>1、引用必须初始化</h4><pre><code>例如：int &amp;b; //错误的int &amp;b=a;//正确的</code></pre><h4 id="2、引用一旦初始化之后就不能再更改"><a href="#2、引用一旦初始化之后就不能再更改" class="headerlink" title="2、引用一旦初始化之后就不能再更改"></a>2、引用一旦初始化之后就不能再更改</h4><pre><code>例如：int &amp;b=a;int &amp;b=c;//错误的</code></pre><h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><pre><code>b=c;//这是赋值操作，是允许的，而不是更改引用</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>内存分区</title>
+    <link href="/2021/12/02/%E5%86%85%E5%AD%98%E5%88%86%E5%8C%BA/"/>
+    <url>/2021/12/02/%E5%86%85%E5%AD%98%E5%88%86%E5%8C%BA/</url>
+    
+    <content type="html"><![CDATA[<h2 id="内存分区模型"><a href="#内存分区模型" class="headerlink" title="内存分区模型"></a>内存分区模型</h2><h4 id="C-程序在执行的时候，会将内存大方向分为4个区域："><a href="#C-程序在执行的时候，会将内存大方向分为4个区域：" class="headerlink" title="C++程序在执行的时候，会将内存大方向分为4个区域："></a>C++程序在执行的时候，会将内存大方向分为4个区域：</h4><pre><code>1.代码区：存放函数体的二进制代码，由操作系统进行管理2.全局区：存放全局变量和静态变量以及常量3.栈区：由编译器自动分配和释放，存放函数的参数值、局部变量等4.堆区：由程序员分配和释放，若程序员不是放，程序结束时由操作系统进行回收</code></pre><h3 id="内四区的意义："><a href="#内四区的意义：" class="headerlink" title="内四区的意义："></a>内四区的意义：</h3><pre><code>不同区域存放不同的数据，赋予不同的生命周期，让我们更灵活地编程</code></pre><hr><h2 id="程序运行之前："><a href="#程序运行之前：" class="headerlink" title="程序运行之前："></a>程序运行之前：</h2><pre><code>在程序编译后，生成了exe可执行程序；未执行程序之前分为两个区域：</code></pre><h3 id="代码区："><a href="#代码区：" class="headerlink" title="代码区："></a>代码区：</h3><pre><code>1.存放CPU执行的机器指令。2.代码区是共享的，共享的目的是对于频繁被执行的程序，只需要在内存中有一份代码即可。3.代码区是只读的，使其只读的原因是防止程序在执行过程中意外地修改它原来的指令</code></pre><h3 id="全局区："><a href="#全局区：" class="headerlink" title="全局区："></a>全局区：</h3><pre><code>1.全局变量和静态变量存放在此。2.全局变量里还包含了常量区、字符串常量和其他常量也存放在此。3.该区域的数据在程序结束后由操作系统释放。</code></pre><hr><h2 id="程序运行之后"><a href="#程序运行之后" class="headerlink" title="程序运行之后"></a>程序运行之后</h2><pre><code>程序运行之后：</code></pre><h3 id="栈区"><a href="#栈区" class="headerlink" title="栈区"></a>栈区</h3><pre><code>1.不要返回局部变量的地址2.栈区的数据由编译器管理开辟和释放</code></pre><h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><pre><code>int* func()&#123;    int a=10;//局部变量    return &amp;a; //返回局部变量的地址，栈区的数据在函数执行结束之后会被释放 &#125;int main()&#123;    //接收func函数的返回值    int *p=func();    //在执行完函数之后，栈区数据被释放，但是利用指针接收到了原栈区数据的地址     cout&lt;&lt;*p&lt;&lt;endl;//第一次输出正确是因为编译器对该地址指向的数据做了保留     cout&lt;&lt;*p&lt;&lt;endl; //第二次这个数据就不再保留，就会返回错误的值     system(&quot;pause&quot;);    return 0; &#125;</code></pre><h3 id="堆区"><a href="#堆区" class="headerlink" title="堆区"></a>堆区</h3><pre><code>1.由程序员进行分配和释放，若程序员不释放，程序结束时由操作系统进行回收2.在C++中主要利用关键字new在堆区开辟内存</code></pre><h4 id="堆区内存的开辟和释放"><a href="#堆区内存的开辟和释放" class="headerlink" title="堆区内存的开辟和释放"></a>堆区内存的开辟和释放</h4><pre><code>1.利用new关键字在堆区开辟内存空间的时候，返回的是该数据类型的指针  2.对应地释放该内存空间的时候，需要用关键字delete，内存被释放之后就不可再被访问 </code></pre><h5 id="单个数据的内存开辟"><a href="#单个数据的内存开辟" class="headerlink" title="单个数据的内存开辟"></a>单个数据的内存开辟</h5><h5 id="语法：数据类型-接收指针的变量名称-对应数据类型（数据）"><a href="#语法：数据类型-接收指针的变量名称-对应数据类型（数据）" class="headerlink" title="语法：数据类型 * 接收指针的变量名称 = 对应数据类型（数据）"></a>语法：数据类型 * 接收指针的变量名称 = 对应数据类型（数据）</h5><pre><code>例如：//在堆区创建整型数据，存储值为10int* func1()&#123;    //用指针a记录该内存的地址     int *a=new int(10);    return a;//函数的返回值是该内存的地址 &#125; 在主函数中进行调用int *p=func1();//func1 函数调用结束之后，虽然局部变量a消失了，但是a记录的值传了出来//在main函数中由指针p进行了接收，该值依然指向在堆区开辟的那一块内存  cout&lt;&lt;*p&lt;&lt;endl;cout&lt;&lt;*p&lt;&lt;endl;//两次调用的结果是一致的</code></pre><h5 id="数组内存的开辟"><a href="#数组内存的开辟" class="headerlink" title="数组内存的开辟"></a>数组内存的开辟</h5><h5 id="语法：数组类型-接收指针的变量名称-对应的数组类型-数组长度"><a href="#语法：数组类型-接收指针的变量名称-对应的数组类型-数组长度" class="headerlink" title="语法：数组类型 * 接收指针的变量名称 = 对应的数组类型[数组长度]"></a>语法：数组类型 * 接收指针的变量名称 = 对应的数组类型[数组长度]</h5><pre><code>例如：//在堆区开辟整型数组，数组长度为10 int* func2()&#123;    //用指针b接收该数组的地址    int *b=new int[10];    return b;&#125;//在主函数中进行调用int *q=func2(); //数组的访问 for(int i=0;i&lt;10;i++)//将在堆区开辟的数组赋值并输出 &#123;    q[i]=i+100;    cout&lt;&lt;q[i]&lt;&lt;endl;&#125;</code></pre><h6 id="单个数据内存的释放"><a href="#单个数据内存的释放" class="headerlink" title="单个数据内存的释放"></a>单个数据内存的释放</h6><h6 id="语法：delete-接收指针的变量名"><a href="#语法：delete-接收指针的变量名" class="headerlink" title="语法：delete 接收指针的变量名"></a>语法：delete 接收指针的变量名</h6><pre><code>delete p;</code></pre><h5 id="数组内存的释放"><a href="#数组内存的释放" class="headerlink" title="数组内存的释放"></a>数组内存的释放</h5><h5 id="语法：-delete-接收指针的变量名"><a href="#语法：-delete-接收指针的变量名" class="headerlink" title="语法： delete[] 接收指针的变量名"></a>语法： delete[] 接收指针的变量名</h5><pre><code>delete[] q;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>全局变量和局部变量</title>
+    <link href="/2021/12/02/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/"/>
+    <url>/2021/12/02/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/</url>
+    
+    <content type="html"><![CDATA[<pre><code>#include&lt;iostream&gt;using namespace std;//创建全局变量int g_a=10;int g_b=10; //const修饰的全局变量const int c_g_a=10;const int c_g_b=10; int main()&#123;    //创建普通局部变量    int a=10;    int b=10;    //静态变量     static int s_a=10;    static int s_b=10;     //常量    //字符串常量的地址    cout&lt;&lt;&quot;字符串常量hello的地址为：&quot;&lt;&lt;&amp;&quot;Hello&quot;&lt;&lt;endl;     //const修饰的常量分为：const修饰的全局变量和局部变量     //const修饰的局部变量     const int c_l_a=10;    const int c_l_b=10;    cout&lt;&lt;&quot;局部变量a的地址为：&quot;&lt;&lt;&amp;a&lt;&lt;endl;    cout&lt;&lt;&quot;局部变量b的地址为：&quot;&lt;&lt;&amp;b&lt;&lt;endl;    cout&lt;&lt;&quot;全局变量g_a的地址为：&quot;&lt;&lt;&amp;g_a&lt;&lt;endl;    cout&lt;&lt;&quot;全局变量g_b的地址为：&quot;&lt;&lt;&amp;g_b&lt;&lt;endl;    cout&lt;&lt;&quot;静态变量s_a的地址为：&quot;&lt;&lt;&amp;s_a&lt;&lt;endl;    cout&lt;&lt;&quot;静态变量s_b的地址为：&quot;&lt;&lt;&amp;s_b&lt;&lt;endl;    cout&lt;&lt;&quot;const修饰的全局变量c_g_a的地址为：&quot;&lt;&lt;&amp;c_g_a&lt;&lt;endl;    cout&lt;&lt;&quot;const修饰的全局变量c_g_b的地址为：&quot;&lt;&lt;&amp;c_g_b&lt;&lt;endl;    cout&lt;&lt;&quot;const修饰的局部变量c_l_a的地址为：&quot;&lt;&lt;&amp;c_l_a&lt;&lt;endl;    cout&lt;&lt;&quot;const修饰的局部变量c_l_b的地址为：&quot;&lt;&lt;&amp;c_l_b&lt;&lt;endl;    system(&quot;pause&quot;);    return 0;&#125;</code></pre><h3 id="局部变量、const修饰的局部变量（局部常量）都不在全局区。"><a href="#局部变量、const修饰的局部变量（局部常量）都不在全局区。" class="headerlink" title="局部变量、const修饰的局部变量（局部常量）都不在全局区。"></a>局部变量、const修饰的局部变量（局部常量）都不在全局区。</h3><h3 id="全局变量、静态变量、常量、字符串常量、const修饰的字符串常量都在全局区"><a href="#全局变量、静态变量、常量、字符串常量、const修饰的字符串常量都在全局区" class="headerlink" title="全局变量、静态变量、常量、字符串常量、const修饰的字符串常量都在全局区"></a>全局变量、静态变量、常量、字符串常量、const修饰的字符串常量都在全局区</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>通讯录</title>
     <link href="/2021/12/01/%E9%80%9A%E8%AE%AF%E5%BD%95/"/>
     <url>/2021/12/01/%E9%80%9A%E8%AE%AF%E5%BD%95/</url>

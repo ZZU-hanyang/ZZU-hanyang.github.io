@@ -190,6 +190,264 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/11/27/%E7%94%A8%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" target="_self">
+          用指针实现冒泡排序
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/27/%E7%94%A8%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" target="_self">
+          
+          
+            
+          
+          冒泡排序#include&lt;iostream&gt;
+using namespace std;
+
+void bubbleSort(int *arr,int len);
+void printArray(int *arr,int len);
+
+int main()
+&#123;
+    //冒泡排序
+    int arr[10]=&#123;4,6,8,0,3,7,9,1,5,2&#125;;
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-27 22:32" pubdate>
+              2021-11-27
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/27/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" target="_self">
+          指针和数组
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/27/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" target="_self">
+          
+          
+            
+          
+          利用指针访问数组一维数组int arr[10]=&#123;0,1,2,3,4,5,6,7,8,9&#125;;
+
+int *p=arr;//数组名就是的值就是数组的首地址
+int i;
+for(i=0;i&lt;10;i++)
+&#123;
+    cout&lt;&lt;*p&lt;&lt;endl;    
+&#125; 
+
+二维数组未完待续。。。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-27 22:32" pubdate>
+              2021-11-27
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/">C++ 未完待续</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/27/%E6%8C%87%E9%92%88/" target="_self">
+          指针
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/27/%E6%8C%87%E9%92%88/" target="_self">
+          
+          
+            
+          
+          指针的作用可以通过指针间接访问内存注意：1.内存编号一般是从0开始记录的，一般用16进制数字表示2.可以利用指针变量保存地址
+指针的定义和使用1.语法：数据类型 * 变量名例如：int a = 10 ;
+int *p;
+p = &amp;a;
+   // 或者 int *p = &amp;a;
+
+2.指针变量的赋值p1=&amp;a;//将a的地址赋给p1
+cout&lt;&lt;&quot;a的
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-27 22:31" pubdate>
+              2021-11-27
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/26/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/" target="_self">
+          二维数组
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/26/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/" target="_self">
+          
+          
+            
+          
+          二维数组的定义//定义一个2行3列的二维数组 
+int arr1[2][3]; 
+ 
+int arr2[2][3]=
+&#123;
+    &#123;1,2,3&#125;,
+    &#123;4,5,6&#125;
+&#125;; 
+
+int arr3[][3]=&#123;&#123;1,2,3&#125;,&#123;4,5,6&#125;&#125;;
+
+int arr4[2][3]=
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-26 23:08" pubdate>
+              2021-11-26
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/26/%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/" target="_self">
+          函数的分文件编写
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/26/%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/" target="_self">
+          
+          
+            
+          
+          1.创建.h后缀名的头文件2.创建.cpp后缀名的源文件3.在头文件中对函数进行声明4.在源文件中对函数进行定义
+示例max.h#includeusing namespace std;void max(int num1,int num2);
+
+
+max.cpp#include “max.h”void max(int num1,int num2)
+&#123;
+    cout&lt;&lt; (n
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-26 23:08" pubdate>
+              2021-11-26
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/11/25/goto%E8%AF%AD%E5%8F%A5/" target="_self">
           goto语句
         </a>
@@ -409,260 +667,6 @@ cout &lt;&lt;( a || b) &lt;&lt; endl;
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
             <time datetime="2021-11-24 20:32" pubdate>
-              2021-11-24
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/24/%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/" target="_self">
-          比较运算符
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/24/%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/" target="_self">
-          
-          
-            
-          
-          比较运算符等于 ==cout &lt;&lt; (a == b) &lt;&lt; endl;
-
-不等于 !=cout &lt;&lt; (a != b) &lt;&lt; endl;
-
-大于 &gt;cout &lt;&lt; (a &gt; b) &lt;&lt; endl;
-
-小于 &lt;cout &lt;&lt; (a &lt; b) &lt;&lt; endl;
-
-大于等于 &gt;=
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-24 20:32" pubdate>
-              2021-11-24
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/24/%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6/" target="_self">
-          赋值运算符
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/24/%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6/" target="_self">
-          
-          
-            
-          
-          赋值运算符=int a;
-a = 10;
-cout &lt;&lt; &quot;a=&quot; &lt;&lt; a &lt;&lt; endl;
-
-+=int b = 10;
-b += 1;  //相当于将b+1的值赋给b
-cout &lt;&lt; &quot;b=&quot; &lt;&lt; b &lt;&lt; endl;
-
--=int c = 10;
-c -= 1; 
-cout &
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-24 20:32" pubdate>
-              2021-11-24
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/24/%E8%BF%90%E7%AE%97%E7%AC%A6/" target="_self">
-          运算符
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/24/%E8%BF%90%E7%AE%97%E7%AC%A6/" target="_self">
-          
-          
-            
-          
-          运算符加法 +//加法 +
-int num1 = 10, num2 = 3;
-cout &lt;&lt; num1 + num2 &lt;&lt; endl;
-
-减法 -//减法
-cout &lt;&lt; num1 - num2 &lt;&lt; endl;
-
-乘法 *//乘法
-cout &lt;&lt; num1*num2 &lt;&lt; endl;
-
-除法 ///除法
-cout &lt;&
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-24 20:31" pubdate>
-              2021-11-24
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/24/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BE%93%E5%85%A5/" target="_self">
-          数据的输入
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/24/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BE%93%E5%85%A5/" target="_self">
-          
-          
-            
-          
-          数据的输入整型int num = 1;
-cout &lt;&lt; &quot;请输入整数的值：&quot; &lt;&lt; endl;
-cin &gt;&gt; num;
-cout &lt;&lt; &quot;num = &quot; &lt;&lt; num &lt;&lt; endl;
-
-浮点型float num = 3.14l;
-cout &lt;&lt; &quot;请输入num的数
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-24 20:31" pubdate>
-              2021-11-24
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" target="_self">
-          数据结构
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" target="_self">
-          
-          
-            
-          
-          整型short; int;  long;   long longshort 占2个字节
-cout &lt;&lt; &quot;short占的字节:&quot; &lt;&lt; sizeof(short) &lt;&lt; endl;
-
-int 占4个字节
-cout &lt;&lt; &quot;int占的字节：&quot; &lt;&lt; sizeof(int) &lt;&lt; endl;
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-24 12:05" pubdate>
               2021-11-24
             </time>
           </div>

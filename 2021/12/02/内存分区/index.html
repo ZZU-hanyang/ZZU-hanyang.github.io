@@ -16,20 +16,20 @@
   <meta name="description" content="">
   <meta name="author" content="韩阳">
   <meta name="keywords" content="">
-  <meta name="description" content="通讯录主函数addressBooks.cpp#include&lt;iostream&gt;     #include&lt;string&gt; #include &quot;function.h&quot; using namespace std;  int main() &amp;#123;     &#x2F;&#x2F;初始化通讯录     struct addressBooks abs;     abs.m_Si">
+  <meta name="description" content="内存分区模型C++程序在执行的时候，会将内存大方向分为4个区域：1.代码区：存放函数体的二进制代码，由操作系统进行管理 2.全局区：存放全局变量和静态变量以及常量 3.栈区：由编译器自动分配和释放，存放函数的参数值、局部变量等 4.堆区：由程序员分配和释放，若程序员不是放，程序结束时由操作系统进行回收  内四区的意义：不同区域存放不同的数据，赋予不同的生命周期，让我们更灵活地编程   程序运行之前">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通讯录">
-<meta property="og:url" content="http://example.com/2021/12/01/%E9%80%9A%E8%AE%AF%E5%BD%95/index.html">
+<meta property="og:title" content="内存分区">
+<meta property="og:url" content="http://example.com/2021/12/02/%E5%86%85%E5%AD%98%E5%88%86%E5%8C%BA/index.html">
 <meta property="og:site_name" content="韩阳">
-<meta property="og:description" content="通讯录主函数addressBooks.cpp#include&lt;iostream&gt;     #include&lt;string&gt; #include &quot;function.h&quot; using namespace std;  int main() &amp;#123;     &#x2F;&#x2F;初始化通讯录     struct addressBooks abs;     abs.m_Si">
+<meta property="og:description" content="内存分区模型C++程序在执行的时候，会将内存大方向分为4个区域：1.代码区：存放函数体的二进制代码，由操作系统进行管理 2.全局区：存放全局变量和静态变量以及常量 3.栈区：由编译器自动分配和释放，存放函数的参数值、局部变量等 4.堆区：由程序员分配和释放，若程序员不是放，程序结束时由操作系统进行回收  内四区的意义：不同区域存放不同的数据，赋予不同的生命周期，让我们更灵活地编程   程序运行之前">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-01T06:01:23.000Z">
-<meta property="article:modified_time" content="2021-12-01T06:07:14.473Z">
+<meta property="article:published_time" content="2021-12-02T14:44:36.000Z">
+<meta property="article:modified_time" content="2021-12-03T04:38:13.601Z">
 <meta property="article:author" content="韩阳">
-<meta property="article:tag" content="项目">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>通讯录 - 韩阳</title>
+  <title>内存分区 - 韩阳</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="通讯录">
+            <span class="h2" id="subtitle" title="内存分区">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-12-01 14:01" pubdate>
-        2021年12月1日 下午
+      <time datetime="2021-12-02 22:44" pubdate>
+        2021年12月2日 晚上
       </time>
     </span>
   
@@ -196,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      5.7k 字
+      1.5k 字
     </span>
   
 
@@ -205,7 +205,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      18 分钟
+      5 分钟
     </span>
   
 
@@ -234,317 +234,97 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">通讯录</h1>
+            <h1 style="display: none">内存分区</h1>
             
             <div class="markdown-body">
-              <h2 id="通讯录主函数"><a href="#通讯录主函数" class="headerlink" title="通讯录主函数"></a>通讯录主函数</h2><h3 id="addressBooks-cpp"><a href="#addressBooks-cpp" class="headerlink" title="addressBooks.cpp"></a>addressBooks.cpp</h3><pre><code>#include&lt;iostream&gt;
-    #include&lt;string&gt;
-#include &quot;function.h&quot;
-using namespace std;
+              <h2 id="内存分区模型"><a href="#内存分区模型" class="headerlink" title="内存分区模型"></a>内存分区模型</h2><h4 id="C-程序在执行的时候，会将内存大方向分为4个区域："><a href="#C-程序在执行的时候，会将内存大方向分为4个区域：" class="headerlink" title="C++程序在执行的时候，会将内存大方向分为4个区域："></a>C++程序在执行的时候，会将内存大方向分为4个区域：</h4><pre><code>1.代码区：存放函数体的二进制代码，由操作系统进行管理
+2.全局区：存放全局变量和静态变量以及常量
+3.栈区：由编译器自动分配和释放，存放函数的参数值、局部变量等
+4.堆区：由程序员分配和释放，若程序员不是放，程序结束时由操作系统进行回收
+</code></pre>
+<h3 id="内四区的意义："><a href="#内四区的意义：" class="headerlink" title="内四区的意义："></a>内四区的意义：</h3><pre><code>不同区域存放不同的数据，赋予不同的生命周期，让我们更灵活地编程
+</code></pre>
+<hr>
+<h2 id="程序运行之前："><a href="#程序运行之前：" class="headerlink" title="程序运行之前："></a>程序运行之前：</h2><pre><code>在程序编译后，生成了exe可执行程序；未执行程序之前分为两个区域：
+</code></pre>
+<h3 id="代码区："><a href="#代码区：" class="headerlink" title="代码区："></a>代码区：</h3><pre><code>1.存放CPU执行的机器指令。
+2.代码区是共享的，共享的目的是对于频繁被执行的程序，只需要在内存中有一份代码即可。
+3.代码区是只读的，使其只读的原因是防止程序在执行过程中意外地修改它原来的指令
+</code></pre>
+<h3 id="全局区："><a href="#全局区：" class="headerlink" title="全局区："></a>全局区：</h3><pre><code>1.全局变量和静态变量存放在此。
+2.全局变量里还包含了常量区、字符串常量和其他常量也存放在此。
+3.该区域的数据在程序结束后由操作系统释放。
+</code></pre>
+<hr>
+<h2 id="程序运行之后"><a href="#程序运行之后" class="headerlink" title="程序运行之后"></a>程序运行之后</h2><pre><code>程序运行之后：
+</code></pre>
+<h3 id="栈区"><a href="#栈区" class="headerlink" title="栈区"></a>栈区</h3><pre><code>1.不要返回局部变量的地址
+2.栈区的数据由编译器管理开辟和释放
+</code></pre>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><pre><code>int* func()
+&#123;
+    int a=10;//局部变量
+    return &amp;a; //返回局部变量的地址，栈区的数据在函数执行结束之后会被释放 
+&#125;
 
 int main()
 &#123;
-    //初始化通讯录
-    struct addressBooks abs;
-    abs.m_Size = 0;
+    //接收func函数的返回值
+    int *p=func();
 
-    int select;
-    while (true)
-    &#123;
-        showMenu();
-        cin &gt;&gt; select;
-        switch (select)
-        &#123;
-        case 1:
-            addPerson(&amp;abs);//添加联系人
-            break;
-        case 2:
-            showPerson(&amp;abs);//显示联系人
-            break;
-        case 3:
-            deletePerson(&amp;abs);//删除联系人
-            break;
-        case 4:
-            searchPerson(&amp;abs);//查找联系人
-            break;
-        case 5:
-            recomposePerson(&amp;abs);//修改联系人
-            break;
-        case 6:
-            clearAddressBooks(&amp;abs);//清空通讯录
-            break;
-        case 0:
-        &#123;
-            cout &lt;&lt; &quot;退出成功&quot; &lt;&lt; endl;
-            return 0;
-            system(&quot;pause&quot;);
-            system(&quot;cls&quot;);
-        &#125;
-            break;
-        default:
-        &#123;
-            cout &lt;&lt; &quot;输入有误，请重新输入&quot; &lt;&lt; endl;
-            system(&quot;pause&quot;);
-            system(&quot;cls&quot;);
-        &#125;
-        &#125;
-    &#125;
+    //在执行完函数之后，栈区数据被释放，但是利用指针接收到了原栈区数据的地址 
+    cout&lt;&lt;*p&lt;&lt;endl;//第一次输出正确是因为编译器对该地址指向的数据做了保留 
+    cout&lt;&lt;*p&lt;&lt;endl; //第二次这个数据就不再保留，就会返回错误的值 
+
+    system(&quot;pause&quot;);
+    return 0; 
 &#125;
 </code></pre>
-<hr>
-<h2 id="通讯录功能函数的头文件"><a href="#通讯录功能函数的头文件" class="headerlink" title="通讯录功能函数的头文件"></a>通讯录功能函数的头文件</h2><h3 id="function-h"><a href="#function-h" class="headerlink" title="function.h"></a>function.h</h3><pre><code>#pragma once
-#include&lt;iostream&gt;
-#include&lt;string&gt;
-#define MAX 100
-using namespace std;
-
-//定义联系人结构体
-struct Person
-&#123;
-    string m_Name;//姓名
-    int m_Sex;//性别 1代表男 2代表女
-    int m_Age;//年龄
-    string m_Phone;//电话
-    string m_Addr;//家庭住址
-&#125;;
-
-//定义通讯录结构体
-struct addressBooks
-&#123;
-    struct Person personArr[MAX];
-    int m_Size;
-&#125;;
-
-//显示菜单
-void showMenu();
-
-//输入某一个联系人的信息
-void inputPerson(struct Person* person);
-
-//输出某一个联系人的信息
-void outputPerson(struct Person* person);
-
-//1、添加联系人
-void addPerson(struct addressBooks* abs);
-
-//2、显示联系人
-void showPerson(struct addressBooks* abs);
-
-//3、删除联系人
-void deletePerson(struct addressBooks* abs);
-
-//4、查找联系人
-void searchPerson(struct addressBooks* abs);
-
-//5、修改联系人
-void recomposePerson(struct addressBooks* abs);
-
-//6 清空联系人
-void clearAddressBooks(struct addressBooks* abs);
+<h3 id="堆区"><a href="#堆区" class="headerlink" title="堆区"></a>堆区</h3><pre><code>1.由程序员进行分配和释放，若程序员不释放，程序结束时由操作系统进行回收
+2.在C++中主要利用关键字new在堆区开辟内存
 </code></pre>
-<hr>
-<h2 id="通讯录功能函数"><a href="#通讯录功能函数" class="headerlink" title="通讯录功能函数"></a>通讯录功能函数</h2><h2 id="function-cpp"><a href="#function-cpp" class="headerlink" title="function.cpp"></a>function.cpp</h2><pre><code>#include &quot;function.h&quot;
-
-//显示菜单栏
-void showMenu()
+<h4 id="堆区内存的开辟和释放"><a href="#堆区内存的开辟和释放" class="headerlink" title="堆区内存的开辟和释放"></a>堆区内存的开辟和释放</h4><pre><code>1.利用new关键字在堆区开辟内存空间的时候，返回的是该数据类型的指针  
+2.对应地释放该内存空间的时候，需要用关键字delete，内存被释放之后就不可再被访问 
+</code></pre>
+<h5 id="单个数据的内存开辟"><a href="#单个数据的内存开辟" class="headerlink" title="单个数据的内存开辟"></a>单个数据的内存开辟</h5><h5 id="语法：数据类型-接收指针的变量名称-对应数据类型（数据）"><a href="#语法：数据类型-接收指针的变量名称-对应数据类型（数据）" class="headerlink" title="语法：数据类型 * 接收指针的变量名称 = 对应数据类型（数据）"></a>语法：数据类型 * 接收指针的变量名称 = 对应数据类型（数据）</h5><pre><code>例如：
+//在堆区创建整型数据，存储值为10
+int* func1()
 &#123;
-    cout &lt;&lt; &quot;*********通讯录********&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****1、添加联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****2、显示联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****3、删除联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****4、查找联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****5、修改联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****6、清空联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****0、退出通讯录*****&quot; &lt;&lt; endl;
+    //用指针a记录该内存的地址 
+    int *a=new int(10);
+    return a;//函数的返回值是该内存的地址 
 &#125;
 
-//1、添加联系人
-void addPerson(struct addressBooks* abs)
+ 在主函数中进行调用
+int *p=func1();
+//func1 函数调用结束之后，虽然局部变量a消失了，但是a记录的值传了出来
+//在main函数中由指针p进行了接收，该值依然指向在堆区开辟的那一块内存 
+ 
+cout&lt;&lt;*p&lt;&lt;endl;
+cout&lt;&lt;*p&lt;&lt;endl;
+//两次调用的结果是一致的
+</code></pre>
+<h5 id="数组内存的开辟"><a href="#数组内存的开辟" class="headerlink" title="数组内存的开辟"></a>数组内存的开辟</h5><h5 id="语法：数组类型-接收指针的变量名称-对应的数组类型-数组长度"><a href="#语法：数组类型-接收指针的变量名称-对应的数组类型-数组长度" class="headerlink" title="语法：数组类型 * 接收指针的变量名称 = 对应的数组类型[数组长度]"></a>语法：数组类型 * 接收指针的变量名称 = 对应的数组类型[数组长度]</h5><pre><code>例如：
+//在堆区开辟整型数组，数组长度为10 
+int* func2()
 &#123;
-    if (abs-&gt;m_Size == MAX)
-    &#123;
-        cout &lt;&lt; &quot;当前通讯录已满&quot; &lt;&lt; endl;
-    &#125;
-    else
-    &#123;
-        inputPerson(&amp;(abs-&gt;personArr[abs-&gt;m_Size]));
-        abs-&gt;m_Size++;
-        cout &lt;&lt; &quot;添加成功&quot; &lt;&lt; endl;
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
+    //用指针b接收该数组的地址
+    int *b=new int[10];
+    return b;
 &#125;
 
-//查找某一联系人是否存在
-int isExist(struct addressBooks* abs,string name)
+//在主函数中进行调用
+int *q=func2(); 
+//数组的访问 
+for(int i=0;i&lt;10;i++)//将在堆区开辟的数组赋值并输出 
 &#123;
-    int ret = -1;
-    for (int i = 0; i &lt; abs-&gt;m_Size; i++)
-    &#123;
-        if (abs-&gt;personArr[i].m_Name == name)
-        &#123;
-            ret = i;
-            break;
-        &#125;
-    &#125;
-    return ret;
+    q[i]=i+100;
+    cout&lt;&lt;q[i]&lt;&lt;endl;
 &#125;
-
-//输入某一联系人的信息
-void inputPerson(struct Person* person)
-&#123;
-    cout &lt;&lt; &quot;请输入联系人姓名：&quot; &lt;&lt; endl;
-    string name;
-    cin &gt;&gt; name;
-    person-&gt;m_Name = name;
-
-    cout &lt;&lt; &quot;请输入联系人年龄&quot; &lt;&lt; endl;
-    int age;
-    cin &gt;&gt; age;
-    person-&gt;m_Age = age;
-
-    cout &lt;&lt; &quot;请输入联系人性别&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;男---1&quot; &lt;&lt; &quot;\t&quot; &lt;&lt; &quot;女---2&quot; &lt;&lt; endl;
-    int sex;
-    while (true)
-    &#123;
-        cin &gt;&gt; sex;
-        if (sex == 1 || sex == 2)
-        &#123;
-            person-&gt;m_Sex = sex;
-            break;
-        &#125;
-        cout &lt;&lt; &quot;输入有误，请重新输入&quot; &lt;&lt; endl;
-    &#125;
-
-    cout &lt;&lt; &quot;请输入联系人电话&quot; &lt;&lt; endl;
-    string phone;
-    cin &gt;&gt; phone;
-    person-&gt;m_Phone = phone;
-
-    cout &lt;&lt; &quot;请输入联系人家庭地址&quot; &lt;&lt; endl;
-    string address;
-    cin &gt;&gt; address;
-    person-&gt;m_Addr = address;
-&#125;
-
-//输出某一联系人的信息
-void outputPerson(struct Person* person)
-&#123;
-    cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; person-&gt;m_Name &lt;&lt; endl;;
-    cout &lt;&lt; &quot;性别：&quot; &lt;&lt; ((person-&gt;m_Sex == 1) ? &quot;男&quot; : &quot;女&quot;) &lt;&lt; &quot;\t&quot;;
-    cout &lt;&lt; &quot;年龄：&quot; &lt;&lt; person-&gt;m_Age &lt;&lt; &quot;\t&quot;;
-    cout &lt;&lt; &quot;联系电话：&quot; &lt;&lt; person-&gt;m_Phone &lt;&lt; &quot;\t&quot;;
-    cout &lt;&lt; &quot;家庭住址：&quot; &lt;&lt; person-&gt;m_Addr &lt;&lt; endl;
-&#125;
-
-//2、显示联系人
-void showPerson(struct addressBooks* abs)
-&#123;
-    if (abs-&gt;m_Size == 0)
-    &#123;
-        cout &lt;&lt; &quot;当前通讯录为空&quot; &lt;&lt; endl;
-    &#125;
-    else
-    &#123;
-        for (int i = 0; i &lt; abs-&gt;m_Size; i++)
-        &#123;
-            outputPerson(&amp;(abs-&gt;personArr[i]));
-        &#125;
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-&#125;
-
-//3、删除联系人
-void deletePerson(struct addressBooks* abs)
-&#123;
-    cout &lt;&lt; &quot;请输入要删除的联系人姓名&quot; &lt;&lt; endl;
-    string name;
-    cin &gt;&gt; name;
-    int ret = isExist(abs, name);
-    if (ret == -1)
-    &#123;
-        cout &lt;&lt; &quot;此联系人不存在&quot; &lt;&lt; endl;
-    &#125;
-    else
-    &#123;
-        for (int i = ret; i &lt; abs-&gt;m_Size - 1; i++)
-        &#123;
-            abs-&gt;personArr[i] = abs-&gt;personArr[i + 1];
-        &#125;
-        abs-&gt;m_Size--;
-        cout &lt;&lt; &quot;删除成功&quot; &lt;&lt; endl;
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-&#125;
-
-//5、修改联系人
-void recomposePerson(struct addressBooks* abs)
-&#123;
-    cout &lt;&lt; &quot;请输入要修改的联系人姓名&quot; &lt;&lt; endl;
-    string name;
-    cin &gt;&gt; name;
-    int ret = isExist(abs, name);
-    if (ret == -1)
-    &#123;
-        cout &lt;&lt; &quot;此联系人不存在&quot; &lt;&lt; endl;
-    &#125;
-    else
-    &#123;
-        inputPerson(&amp;(abs-&gt;personArr[ret]));
-        cout &lt;&lt; &quot;修改成功&quot; &lt;&lt; endl;
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-&#125;
-
-//4、查找联系人
-void searchPerson(struct addressBooks* abs)
-&#123;
-    cout &lt;&lt; &quot;请输入要查找的联系人姓名&quot; &lt;&lt; endl;
-    string name;
-    cin &gt;&gt; name;
-    int ret = isExist(abs, name);
-    if (ret == -1)
-    &#123;
-        cout &lt;&lt; &quot;此联系人不存在&quot; &lt;&lt; endl;
-    &#125;
-    else
-    &#123;
-        outputPerson(&amp;(abs-&gt;personArr[ret]));
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-&#125;
-
-//6、清空联系人
-void clearAddressBooks(struct addressBooks* abs)
-&#123;
-    cout &lt;&lt; &quot;您确定要删除所有联系人吗&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;确定请输入Yes&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;取消请输入No&quot; &lt;&lt; endl;
-    string inputUser;
-    while (true)
-    &#123;
-        cin &gt;&gt; inputUser;
-        if (inputUser == &quot;Yes&quot;)
-        &#123;
-            abs-&gt;m_Size = 0;
-            cout &lt;&lt; &quot;清空成功&quot; &lt;&lt; endl;
-            break;
-        &#125;
-        else if (inputUser == &quot;No&quot;)
-        &#123;
-            cout &lt;&lt; &quot;取消成功&quot; &lt;&lt; endl;
-            break;
-        &#125;
-        cout &lt;&lt; &quot;输入有误，请重新输入&quot; &lt;&lt; endl;
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-&#125;
+</code></pre>
+<h6 id="单个数据内存的释放"><a href="#单个数据内存的释放" class="headerlink" title="单个数据内存的释放"></a>单个数据内存的释放</h6><h6 id="语法：delete-接收指针的变量名"><a href="#语法：delete-接收指针的变量名" class="headerlink" title="语法：delete 接收指针的变量名"></a>语法：delete 接收指针的变量名</h6><pre><code>delete p;
+</code></pre>
+<h5 id="数组内存的释放"><a href="#数组内存的释放" class="headerlink" title="数组内存的释放"></a>数组内存的释放</h5><h5 id="语法：-delete-接收指针的变量名"><a href="#语法：-delete-接收指针的变量名" class="headerlink" title="语法： delete[] 接收指针的变量名"></a>语法： delete[] 接收指针的变量名</h5><pre><code>delete[] q;
 </code></pre>
 
             </div>
@@ -556,7 +336,7 @@ void clearAddressBooks(struct addressBooks* abs)
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+                      <a class="hover-with-bg" href="/tags/C/">C++</a>
                     
                   </div>
                 
@@ -573,9 +353,9 @@ void clearAddressBooks(struct addressBooks* abs)
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/12/02/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/">
+                      <a href="/2021/12/02/%E5%BC%95%E7%94%A8/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">全局变量和局部变量</span>
+                        <span class="hidden-mobile">引用</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -583,8 +363,8 @@ void clearAddressBooks(struct addressBooks* abs)
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/">
-                        <span class="hidden-mobile">结构体做函数参数</span>
+                      <a href="/2021/12/02/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/">
+                        <span class="hidden-mobile">全局变量和局部变量</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -16,18 +16,38 @@
   <meta name="description" content="">
   <meta name="author" content="韩阳">
   <meta name="keywords" content="">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://example.com/archives/2021/11/page/2/index.html">
+  <meta name="description" content="引用的作用作用：给变量起别名  引用的语法语法： 数据类型 &amp;别名 &#x3D; 原名 例如：   int a&#x3D;10;  int &amp;b&#x3D;a;    &#x2F;&#x2F;a和b的值也是一样的  cout&lt;&lt;&quot;a&#x3D;&quot;&lt;&lt;a&lt;&lt;endl;  cout&lt;&lt;&quot;b&#x3D;&quot;&lt;&lt;b&lt;&lt;endl;     &#x2F;&#x2F;输出的a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="引用">
+<meta property="og:url" content="http://example.com/2021/12/02/%E5%BC%95%E7%94%A8/index.html">
 <meta property="og:site_name" content="韩阳">
+<meta property="og:description" content="引用的作用作用：给变量起别名  引用的语法语法： 数据类型 &amp;别名 &#x3D; 原名 例如：   int a&#x3D;10;  int &amp;b&#x3D;a;    &#x2F;&#x2F;a和b的值也是一样的  cout&lt;&lt;&quot;a&#x3D;&quot;&lt;&lt;a&lt;&lt;endl;  cout&lt;&lt;&quot;b&#x3D;&quot;&lt;&lt;b&lt;&lt;endl;     &#x2F;&#x2F;输出的a">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-02T14:44:46.000Z">
+<meta property="article:modified_time" content="2021-12-03T04:38:57.790Z">
 <meta property="article:author" content="韩阳">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>归档 - 韩阳</title>
+  <title>引用 - 韩阳</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -54,7 +74,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -155,9 +175,43 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="引用">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-02 22:44" pubdate>
+        2021年12月2日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      542 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      2 分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -170,100 +224,118 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 26 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/11/25/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">一维数组</span>
-      <time style="float: right;">11-25</time>
-    </a>
-  
-    
-    <a href="/2021/11/24/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">三目运算符</span>
-      <time style="float: right;">11-24</time>
-    </a>
-  
-    
-    <a href="/2021/11/24/switch%E8%AF%AD%E5%8F%A5/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">switch语句</span>
-      <time style="float: right;">11-24</time>
-    </a>
-  
-    
-    <a href="/2021/11/24/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">逻辑运算符</span>
-      <time style="float: right;">11-24</time>
-    </a>
-  
-    
-    <a href="/2021/11/24/%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">比较运算符</span>
-      <time style="float: right;">11-24</time>
-    </a>
-  
-    
-    <a href="/2021/11/24/%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">赋值运算符</span>
-      <time style="float: right;">11-24</time>
-    </a>
-  
-    
-    <a href="/2021/11/24/%E8%BF%90%E7%AE%97%E7%AC%A6/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">运算符</span>
-      <time style="float: right;">11-24</time>
-    </a>
-  
-    
-    <a href="/2021/11/24/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BE%93%E5%85%A5/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">数据的输入</span>
-      <time style="float: right;">11-24</time>
-    </a>
-  
-    
-    <a href="/2021/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">数据结构</span>
-      <time style="float: right;">11-24</time>
-    </a>
-  
-    
-    <a href="/2021/11/22/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">第一篇博客</span>
-      <time style="float: right;">11-22</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">引用</h1>
+            
+            <div class="markdown-body">
+              <h3 id="引用的作用"><a href="#引用的作用" class="headerlink" title="引用的作用"></a>引用的作用</h3><pre><code>作用：给变量起别名
+</code></pre>
+<h3 id="引用的语法"><a href="#引用的语法" class="headerlink" title="引用的语法"></a>引用的语法</h3><pre><code>语法： 数据类型 &amp;别名 = 原名
+例如：
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2021/11/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/2021/11/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
+ int a=10;
+ int &amp;b=a;
+ 
+ //a和b的值也是一样的
+ cout&lt;&lt;&quot;a=&quot;&lt;&lt;a&lt;&lt;endl;
+ cout&lt;&lt;&quot;b=&quot;&lt;&lt;b&lt;&lt;endl; 
+ 
+ //输出的a和b的地址都是一样的
+ cout&lt;&lt;&quot;a的地址为：&quot;&lt;&lt;&amp;a&lt;&lt;endl;
+ cout&lt;&lt;&quot;b的地址为：&quot;&lt;&lt;&amp;b&lt;&lt;endl;
+ 
+ //通过操作别名b也能更改a的值
+ b=20;
+ cout&lt;&lt;&quot;a=&quot;&lt;&lt;a&lt;&lt;endl;
+ cout&lt;&lt;&quot;b=&quot;&lt;&lt;b&lt;&lt;endl;
+</code></pre>
+<h3 id="引用的注意事项"><a href="#引用的注意事项" class="headerlink" title="引用的注意事项"></a>引用的注意事项</h3><h4 id="1、引用必须初始化"><a href="#1、引用必须初始化" class="headerlink" title="1、引用必须初始化"></a>1、引用必须初始化</h4><pre><code>例如：
+int &amp;b; //错误的
+int &amp;b=a;//正确的
+</code></pre>
+<h4 id="2、引用一旦初始化之后就不能再更改"><a href="#2、引用一旦初始化之后就不能再更改" class="headerlink" title="2、引用一旦初始化之后就不能再更改"></a>2、引用一旦初始化之后就不能再更改</h4><pre><code>例如：
+int &amp;b=a;
+int &amp;b=c;//错误的
+</code></pre>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><pre><code>b=c;//这是赋值操作，是允许的，而不是更改引用
+</code></pre>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C++</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">引用做函数参数</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/02/%E5%86%85%E5%AD%98%E5%88%86%E5%8C%BA/">
+                        <span class="hidden-mobile">内存分区</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -346,6 +418,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 

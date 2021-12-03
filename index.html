@@ -190,6 +190,274 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC/" target="_self">
+          引用做函数返回值
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC/" target="_self">
+          
+          
+            
+          
+          不要返回局部变量的引用例如：int &amp;func1()
+&#123;
+    int a=10;
+    return a;//用引用的方式返回局部变量，即返回值是局部变量的别名 
+&#125;
+在主函数中进行调用：
+int &amp;p=func1();
+
+cout&lt;&lt;p&lt;&lt;endl;//第一次输出正确是因为编译器作了保留 
+cout&lt;&lt;p&lt;&lt
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-02 22:45" pubdate>
+              2021-12-02
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/" target="_self">
+          引用做函数参数
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/" target="_self">
+          
+          
+            
+          
+          三种参数传递方式：例如：交换函数1、值传递，形参不能修饰实参void swap1(int a,int b)
+&#123;
+    int temp;
+    temp=a;
+    a=b;
+    b=temp;
+
+    cout&lt;&lt;&quot;swap1中的a=&quot;&lt;&lt;a&lt;&lt;endl;
+    cout&lt;&lt;&quot;swap1中的b=
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-02 22:45" pubdate>
+              2021-12-02
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/12/02/%E5%BC%95%E7%94%A8/" target="_self">
+          引用
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/12/02/%E5%BC%95%E7%94%A8/" target="_self">
+          
+          
+            
+          
+          引用的作用作用：给变量起别名
+
+引用的语法语法： 数据类型 &amp;别名 = 原名
+例如：
+
+ int a=10;
+ int &amp;b=a;
+ 
+ //a和b的值也是一样的
+ cout&lt;&lt;&quot;a=&quot;&lt;&lt;a&lt;&lt;endl;
+ cout&lt;&lt;&quot;b=&quot;&lt;&lt;b&lt;&lt;endl; 
+ 
+ //输出的a
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-02 22:44" pubdate>
+              2021-12-02
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/12/02/%E5%86%85%E5%AD%98%E5%88%86%E5%8C%BA/" target="_self">
+          内存分区
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/12/02/%E5%86%85%E5%AD%98%E5%88%86%E5%8C%BA/" target="_self">
+          
+          
+            
+          
+          内存分区模型C++程序在执行的时候，会将内存大方向分为4个区域：1.代码区：存放函数体的二进制代码，由操作系统进行管理
+2.全局区：存放全局变量和静态变量以及常量
+3.栈区：由编译器自动分配和释放，存放函数的参数值、局部变量等
+4.堆区：由程序员分配和释放，若程序员不是放，程序结束时由操作系统进行回收
+
+内四区的意义：不同区域存放不同的数据，赋予不同的生命周期，让我们更灵活地编程
+
+
+程序运行之前
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-02 22:44" pubdate>
+              2021-12-02
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/12/02/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" target="_self">
+          全局变量和局部变量
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/12/02/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" target="_self">
+          
+          
+            
+          
+          #include&lt;iostream&gt;
+using namespace std;
+
+//创建全局变量
+int g_a=10;
+int g_b=10; 
+
+//const修饰的全局变量
+const int c_g_a=10;
+const int c_g_b=10; 
+
+int main()
+&#123;
+    //创建普通局部变量
+    int a=10;
+    int b=10;
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-02 22:44" pubdate>
+              2021-12-02
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/12/01/%E9%80%9A%E8%AE%AF%E5%BD%95/" target="_self">
           通讯录
         </a>
@@ -435,264 +703,6 @@ student Stu=&#123;&quot;张三&quot;,19,100&#125;;
             <i class="iconfont icon-date"></i>
             <time datetime="2021-11-27 22:32" pubdate>
               2021-11-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/27/%E7%94%A8%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" target="_self">
-          用指针实现冒泡排序
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/27/%E7%94%A8%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" target="_self">
-          
-          
-            
-          
-          冒泡排序#include&lt;iostream&gt;
-using namespace std;
-
-void bubbleSort(int *arr,int len);
-void printArray(int *arr,int len);
-
-int main()
-&#123;
-    //冒泡排序
-    int arr[10]=&#123;4,6,8,0,3,7,9,1,5,2&#125;;
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-27 22:32" pubdate>
-              2021-11-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/27/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" target="_self">
-          指针和数组
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/27/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" target="_self">
-          
-          
-            
-          
-          利用指针访问数组一维数组int arr[10]=&#123;0,1,2,3,4,5,6,7,8,9&#125;;
-
-int *p=arr;//数组名就是的值就是数组的首地址
-int i;
-for(i=0;i&lt;10;i++)
-&#123;
-    cout&lt;&lt;*p&lt;&lt;endl;    
-&#125; 
-
-二维数组未完待续。。。
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-27 22:32" pubdate>
-              2021-11-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/">C++ 未完待续</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/27/%E6%8C%87%E9%92%88/" target="_self">
-          指针
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/27/%E6%8C%87%E9%92%88/" target="_self">
-          
-          
-            
-          
-          指针的作用可以通过指针间接访问内存注意：1.内存编号一般是从0开始记录的，一般用16进制数字表示2.可以利用指针变量保存地址
-指针的定义和使用1.语法：数据类型 * 变量名例如：int a = 10 ;
-int *p;
-p = &amp;a;
-   // 或者 int *p = &amp;a;
-
-2.指针变量的赋值p1=&amp;a;//将a的地址赋给p1
-cout&lt;&lt;&quot;a的
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-27 22:31" pubdate>
-              2021-11-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/26/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/" target="_self">
-          二维数组
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/26/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/" target="_self">
-          
-          
-            
-          
-          二维数组的定义//定义一个2行3列的二维数组 
-int arr1[2][3]; 
- 
-int arr2[2][3]=
-&#123;
-    &#123;1,2,3&#125;,
-    &#123;4,5,6&#125;
-&#125;; 
-
-int arr3[][3]=&#123;&#123;1,2,3&#125;,&#123;4,5,6&#125;&#125;;
-
-int arr4[2][3]=
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-26 23:08" pubdate>
-              2021-11-26
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/26/%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/" target="_self">
-          函数的分文件编写
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/26/%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/" target="_self">
-          
-          
-            
-          
-          1.创建.h后缀名的头文件2.创建.cpp后缀名的源文件3.在头文件中对函数进行声明4.在源文件中对函数进行定义
-示例max.h#includeusing namespace std;void max(int num1,int num2);
-
-
-max.cpp#include “max.h”void max(int num1,int num2)
-&#123;
-    cout&lt;&lt; (n
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-26 23:08" pubdate>
-              2021-11-26
             </time>
           </div>
         

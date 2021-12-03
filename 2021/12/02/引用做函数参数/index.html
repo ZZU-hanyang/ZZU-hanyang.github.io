@@ -16,20 +16,20 @@
   <meta name="description" content="">
   <meta name="author" content="韩阳">
   <meta name="keywords" content="">
-  <meta name="description" content="通讯录主函数addressBooks.cpp#include&lt;iostream&gt;     #include&lt;string&gt; #include &quot;function.h&quot; using namespace std;  int main() &amp;#123;     &#x2F;&#x2F;初始化通讯录     struct addressBooks abs;     abs.m_Si">
+  <meta name="description" content="三种参数传递方式：例如：交换函数1、值传递，形参不能修饰实参void swap1(int a,int b) &amp;#123;     int temp;     temp&#x3D;a;     a&#x3D;b;     b&#x3D;temp;      cout&lt;&lt;&quot;swap1中的a&#x3D;&quot;&lt;&lt;a&lt;&lt;endl;     cout&lt;&lt;&quot;swap1中的b&#x3D;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通讯录">
-<meta property="og:url" content="http://example.com/2021/12/01/%E9%80%9A%E8%AE%AF%E5%BD%95/index.html">
+<meta property="og:title" content="引用做函数参数">
+<meta property="og:url" content="http://example.com/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/index.html">
 <meta property="og:site_name" content="韩阳">
-<meta property="og:description" content="通讯录主函数addressBooks.cpp#include&lt;iostream&gt;     #include&lt;string&gt; #include &quot;function.h&quot; using namespace std;  int main() &amp;#123;     &#x2F;&#x2F;初始化通讯录     struct addressBooks abs;     abs.m_Si">
+<meta property="og:description" content="三种参数传递方式：例如：交换函数1、值传递，形参不能修饰实参void swap1(int a,int b) &amp;#123;     int temp;     temp&#x3D;a;     a&#x3D;b;     b&#x3D;temp;      cout&lt;&lt;&quot;swap1中的a&#x3D;&quot;&lt;&lt;a&lt;&lt;endl;     cout&lt;&lt;&quot;swap1中的b&#x3D;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-01T06:01:23.000Z">
-<meta property="article:modified_time" content="2021-12-01T06:07:14.473Z">
+<meta property="article:published_time" content="2021-12-02T14:45:05.000Z">
+<meta property="article:modified_time" content="2021-12-03T04:39:27.121Z">
 <meta property="article:author" content="韩阳">
-<meta property="article:tag" content="项目">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>通讯录 - 韩阳</title>
+  <title>引用做函数参数 - 韩阳</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="通讯录">
+            <span class="h2" id="subtitle" title="引用做函数参数">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-12-01 14:01" pubdate>
-        2021年12月1日 下午
+      <time datetime="2021-12-02 22:45" pubdate>
+        2021年12月2日 晚上
       </time>
     </span>
   
@@ -196,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      5.7k 字
+      807 字
     </span>
   
 
@@ -205,7 +205,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      18 分钟
+      3 分钟
     </span>
   
 
@@ -234,317 +234,47 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">通讯录</h1>
+            <h1 style="display: none">引用做函数参数</h1>
             
             <div class="markdown-body">
-              <h2 id="通讯录主函数"><a href="#通讯录主函数" class="headerlink" title="通讯录主函数"></a>通讯录主函数</h2><h3 id="addressBooks-cpp"><a href="#addressBooks-cpp" class="headerlink" title="addressBooks.cpp"></a>addressBooks.cpp</h3><pre><code>#include&lt;iostream&gt;
-    #include&lt;string&gt;
-#include &quot;function.h&quot;
-using namespace std;
-
-int main()
+              <h3 id="三种参数传递方式："><a href="#三种参数传递方式：" class="headerlink" title="三种参数传递方式："></a>三种参数传递方式：</h3><h4 id="例如：交换函数"><a href="#例如：交换函数" class="headerlink" title="例如：交换函数"></a>例如：交换函数</h4><h3 id="1、值传递，形参不能修饰实参"><a href="#1、值传递，形参不能修饰实参" class="headerlink" title="1、值传递，形参不能修饰实参"></a>1、值传递，形参不能修饰实参</h3><pre><code>void swap1(int a,int b)
 &#123;
-    //初始化通讯录
-    struct addressBooks abs;
-    abs.m_Size = 0;
+    int temp;
+    temp=a;
+    a=b;
+    b=temp;
 
-    int select;
-    while (true)
-    &#123;
-        showMenu();
-        cin &gt;&gt; select;
-        switch (select)
-        &#123;
-        case 1:
-            addPerson(&amp;abs);//添加联系人
-            break;
-        case 2:
-            showPerson(&amp;abs);//显示联系人
-            break;
-        case 3:
-            deletePerson(&amp;abs);//删除联系人
-            break;
-        case 4:
-            searchPerson(&amp;abs);//查找联系人
-            break;
-        case 5:
-            recomposePerson(&amp;abs);//修改联系人
-            break;
-        case 6:
-            clearAddressBooks(&amp;abs);//清空通讯录
-            break;
-        case 0:
-        &#123;
-            cout &lt;&lt; &quot;退出成功&quot; &lt;&lt; endl;
-            return 0;
-            system(&quot;pause&quot;);
-            system(&quot;cls&quot;);
-        &#125;
-            break;
-        default:
-        &#123;
-            cout &lt;&lt; &quot;输入有误，请重新输入&quot; &lt;&lt; endl;
-            system(&quot;pause&quot;);
-            system(&quot;cls&quot;);
-        &#125;
-        &#125;
-    &#125;
+    cout&lt;&lt;&quot;swap1中的a=&quot;&lt;&lt;a&lt;&lt;endl;
+    cout&lt;&lt;&quot;swap1中的b=&quot;&lt;&lt;b&lt;&lt;endl;
+&#125; 
+</code></pre>
+<h3 id="2、地址传递，形参能够修饰实参"><a href="#2、地址传递，形参能够修饰实参" class="headerlink" title="2、地址传递，形参能够修饰实参"></a>2、地址传递，形参能够修饰实参</h3><pre><code>    void swap2(int *a,int *b)
+&#123;
+    int temp;
+    temp=*a;
+    *a=*b;
+    *b=temp;
+
+    cout&lt;&lt;&quot;swap2中的a=&quot;&lt;&lt;a&lt;&lt;endl;
+    cout&lt;&lt;&quot;swap2中的b=&quot;&lt;&lt;b&lt;&lt;endl;
 &#125;
 </code></pre>
-<hr>
-<h2 id="通讯录功能函数的头文件"><a href="#通讯录功能函数的头文件" class="headerlink" title="通讯录功能函数的头文件"></a>通讯录功能函数的头文件</h2><h3 id="function-h"><a href="#function-h" class="headerlink" title="function.h"></a>function.h</h3><pre><code>#pragma once
-#include&lt;iostream&gt;
-#include&lt;string&gt;
-#define MAX 100
-using namespace std;
-
-//定义联系人结构体
-struct Person
+<h3 id="3、引用传递，形参能够修饰实参"><a href="#3、引用传递，形参能够修饰实参" class="headerlink" title="3、引用传递，形参能够修饰实参"></a>3、引用传递，形参能够修饰实参</h3><pre><code>void swap3(int &amp;a,int &amp;b)
 &#123;
-    string m_Name;//姓名
-    int m_Sex;//性别 1代表男 2代表女
-    int m_Age;//年龄
-    string m_Phone;//电话
-    string m_Addr;//家庭住址
-&#125;;
+    int temp;
+    temp=a;
+    a=b;
+    b=temp;
 
-//定义通讯录结构体
-struct addressBooks
-&#123;
-    struct Person personArr[MAX];
-    int m_Size;
-&#125;;
-
-//显示菜单
-void showMenu();
-
-//输入某一个联系人的信息
-void inputPerson(struct Person* person);
-
-//输出某一个联系人的信息
-void outputPerson(struct Person* person);
-
-//1、添加联系人
-void addPerson(struct addressBooks* abs);
-
-//2、显示联系人
-void showPerson(struct addressBooks* abs);
-
-//3、删除联系人
-void deletePerson(struct addressBooks* abs);
-
-//4、查找联系人
-void searchPerson(struct addressBooks* abs);
-
-//5、修改联系人
-void recomposePerson(struct addressBooks* abs);
-
-//6 清空联系人
-void clearAddressBooks(struct addressBooks* abs);
+    cout&lt;&lt;&quot;swap3中的a=&quot;&lt;&lt;a&lt;&lt;endl;
+    cout&lt;&lt;&quot;swap3中的b=&quot;&lt;&lt;b&lt;&lt;endl;
+&#125;
 </code></pre>
-<hr>
-<h2 id="通讯录功能函数"><a href="#通讯录功能函数" class="headerlink" title="通讯录功能函数"></a>通讯录功能函数</h2><h2 id="function-cpp"><a href="#function-cpp" class="headerlink" title="function.cpp"></a>function.cpp</h2><pre><code>#include &quot;function.h&quot;
-
-//显示菜单栏
-void showMenu()
-&#123;
-    cout &lt;&lt; &quot;*********通讯录********&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****1、添加联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****2、显示联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****3、删除联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****4、查找联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****5、修改联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****6、清空联系人*****&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*****0、退出通讯录*****&quot; &lt;&lt; endl;
-&#125;
-
-//1、添加联系人
-void addPerson(struct addressBooks* abs)
-&#123;
-    if (abs-&gt;m_Size == MAX)
-    &#123;
-        cout &lt;&lt; &quot;当前通讯录已满&quot; &lt;&lt; endl;
-    &#125;
-    else
-    &#123;
-        inputPerson(&amp;(abs-&gt;personArr[abs-&gt;m_Size]));
-        abs-&gt;m_Size++;
-        cout &lt;&lt; &quot;添加成功&quot; &lt;&lt; endl;
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-&#125;
-
-//查找某一联系人是否存在
-int isExist(struct addressBooks* abs,string name)
-&#123;
-    int ret = -1;
-    for (int i = 0; i &lt; abs-&gt;m_Size; i++)
-    &#123;
-        if (abs-&gt;personArr[i].m_Name == name)
-        &#123;
-            ret = i;
-            break;
-        &#125;
-    &#125;
-    return ret;
-&#125;
-
-//输入某一联系人的信息
-void inputPerson(struct Person* person)
-&#123;
-    cout &lt;&lt; &quot;请输入联系人姓名：&quot; &lt;&lt; endl;
-    string name;
-    cin &gt;&gt; name;
-    person-&gt;m_Name = name;
-
-    cout &lt;&lt; &quot;请输入联系人年龄&quot; &lt;&lt; endl;
-    int age;
-    cin &gt;&gt; age;
-    person-&gt;m_Age = age;
-
-    cout &lt;&lt; &quot;请输入联系人性别&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;男---1&quot; &lt;&lt; &quot;\t&quot; &lt;&lt; &quot;女---2&quot; &lt;&lt; endl;
-    int sex;
-    while (true)
-    &#123;
-        cin &gt;&gt; sex;
-        if (sex == 1 || sex == 2)
-        &#123;
-            person-&gt;m_Sex = sex;
-            break;
-        &#125;
-        cout &lt;&lt; &quot;输入有误，请重新输入&quot; &lt;&lt; endl;
-    &#125;
-
-    cout &lt;&lt; &quot;请输入联系人电话&quot; &lt;&lt; endl;
-    string phone;
-    cin &gt;&gt; phone;
-    person-&gt;m_Phone = phone;
-
-    cout &lt;&lt; &quot;请输入联系人家庭地址&quot; &lt;&lt; endl;
-    string address;
-    cin &gt;&gt; address;
-    person-&gt;m_Addr = address;
-&#125;
-
-//输出某一联系人的信息
-void outputPerson(struct Person* person)
-&#123;
-    cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; person-&gt;m_Name &lt;&lt; endl;;
-    cout &lt;&lt; &quot;性别：&quot; &lt;&lt; ((person-&gt;m_Sex == 1) ? &quot;男&quot; : &quot;女&quot;) &lt;&lt; &quot;\t&quot;;
-    cout &lt;&lt; &quot;年龄：&quot; &lt;&lt; person-&gt;m_Age &lt;&lt; &quot;\t&quot;;
-    cout &lt;&lt; &quot;联系电话：&quot; &lt;&lt; person-&gt;m_Phone &lt;&lt; &quot;\t&quot;;
-    cout &lt;&lt; &quot;家庭住址：&quot; &lt;&lt; person-&gt;m_Addr &lt;&lt; endl;
-&#125;
-
-//2、显示联系人
-void showPerson(struct addressBooks* abs)
-&#123;
-    if (abs-&gt;m_Size == 0)
-    &#123;
-        cout &lt;&lt; &quot;当前通讯录为空&quot; &lt;&lt; endl;
-    &#125;
-    else
-    &#123;
-        for (int i = 0; i &lt; abs-&gt;m_Size; i++)
-        &#123;
-            outputPerson(&amp;(abs-&gt;personArr[i]));
-        &#125;
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-&#125;
-
-//3、删除联系人
-void deletePerson(struct addressBooks* abs)
-&#123;
-    cout &lt;&lt; &quot;请输入要删除的联系人姓名&quot; &lt;&lt; endl;
-    string name;
-    cin &gt;&gt; name;
-    int ret = isExist(abs, name);
-    if (ret == -1)
-    &#123;
-        cout &lt;&lt; &quot;此联系人不存在&quot; &lt;&lt; endl;
-    &#125;
-    else
-    &#123;
-        for (int i = ret; i &lt; abs-&gt;m_Size - 1; i++)
-        &#123;
-            abs-&gt;personArr[i] = abs-&gt;personArr[i + 1];
-        &#125;
-        abs-&gt;m_Size--;
-        cout &lt;&lt; &quot;删除成功&quot; &lt;&lt; endl;
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-&#125;
-
-//5、修改联系人
-void recomposePerson(struct addressBooks* abs)
-&#123;
-    cout &lt;&lt; &quot;请输入要修改的联系人姓名&quot; &lt;&lt; endl;
-    string name;
-    cin &gt;&gt; name;
-    int ret = isExist(abs, name);
-    if (ret == -1)
-    &#123;
-        cout &lt;&lt; &quot;此联系人不存在&quot; &lt;&lt; endl;
-    &#125;
-    else
-    &#123;
-        inputPerson(&amp;(abs-&gt;personArr[ret]));
-        cout &lt;&lt; &quot;修改成功&quot; &lt;&lt; endl;
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-&#125;
-
-//4、查找联系人
-void searchPerson(struct addressBooks* abs)
-&#123;
-    cout &lt;&lt; &quot;请输入要查找的联系人姓名&quot; &lt;&lt; endl;
-    string name;
-    cin &gt;&gt; name;
-    int ret = isExist(abs, name);
-    if (ret == -1)
-    &#123;
-        cout &lt;&lt; &quot;此联系人不存在&quot; &lt;&lt; endl;
-    &#125;
-    else
-    &#123;
-        outputPerson(&amp;(abs-&gt;personArr[ret]));
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-&#125;
-
-//6、清空联系人
-void clearAddressBooks(struct addressBooks* abs)
-&#123;
-    cout &lt;&lt; &quot;您确定要删除所有联系人吗&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;确定请输入Yes&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;取消请输入No&quot; &lt;&lt; endl;
-    string inputUser;
-    while (true)
-    &#123;
-        cin &gt;&gt; inputUser;
-        if (inputUser == &quot;Yes&quot;)
-        &#123;
-            abs-&gt;m_Size = 0;
-            cout &lt;&lt; &quot;清空成功&quot; &lt;&lt; endl;
-            break;
-        &#125;
-        else if (inputUser == &quot;No&quot;)
-        &#123;
-            cout &lt;&lt; &quot;取消成功&quot; &lt;&lt; endl;
-            break;
-        &#125;
-        cout &lt;&lt; &quot;输入有误，请重新输入&quot; &lt;&lt; endl;
-    &#125;
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-&#125;
+<h3 id="在主函数调用时："><a href="#在主函数调用时：" class="headerlink" title="在主函数调用时："></a>在主函数调用时：</h3><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><h4 id="int-a-10-b-20"><a href="#int-a-10-b-20" class="headerlink" title="int a=10,b=20;"></a>int a=10,b=20;</h4><h4 id="swap-a-b"><a href="#swap-a-b" class="headerlink" title="swap(a,b);"></a>swap(a,b);</h4><h4 id="这里是用引用的方式传递变量a和b，只是原名和别名起的一样，依然可以实现交换变量a和b的功能"><a href="#这里是用引用的方式传递变量a和b，只是原名和别名起的一样，依然可以实现交换变量a和b的功能" class="headerlink" title="这里是用引用的方式传递变量a和b，只是原名和别名起的一样，依然可以实现交换变量a和b的功能"></a>这里是用引用的方式传递变量a和b，只是原名和别名起的一样，依然可以实现交换变量a和b的功能</h4><pre><code>cout&lt;&lt;&quot;主函数中的a=&quot;&lt;&lt;a&lt;&lt;endl;
+cout&lt;&lt;&quot;主函数中的b=&quot;&lt;&lt;b&lt;&lt;endl;
+//输出结果为主函数中 a=20,b=10;
+//在swap3函数中 a=20,b=20;
+ 
 </code></pre>
 
             </div>
@@ -556,7 +286,7 @@ void clearAddressBooks(struct addressBooks* abs)
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+                      <a class="hover-with-bg" href="/tags/C/">C++</a>
                     
                   </div>
                 
@@ -573,9 +303,9 @@ void clearAddressBooks(struct addressBooks* abs)
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/12/02/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/">
+                      <a href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">全局变量和局部变量</span>
+                        <span class="hidden-mobile">引用做函数返回值</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -583,8 +313,8 @@ void clearAddressBooks(struct addressBooks* abs)
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/">
-                        <span class="hidden-mobile">结构体做函数参数</span>
+                      <a href="/2021/12/02/%E5%BC%95%E7%94%A8/">
+                        <span class="hidden-mobile">引用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
