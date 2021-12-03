@@ -4,6 +4,63 @@
   
   
   <entry>
+    <title>函数重载</title>
+    <link href="/2021/12/03/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD/"/>
+    <url>/2021/12/03/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD/</url>
+    
+    <content type="html"><![CDATA[<h3 id="作用：函数名可以相同，提高了同一个函数名的复用xing"><a href="#作用：函数名可以相同，提高了同一个函数名的复用xing" class="headerlink" title="作用：函数名可以相同，提高了同一个函数名的复用xing"></a>作用：函数名可以相同，提高了同一个函数名的复用xing</h3><h4 id="满足条件："><a href="#满足条件：" class="headerlink" title="满足条件："></a>满足条件：</h4><h4 id="1、在同一个作用域下"><a href="#1、在同一个作用域下" class="headerlink" title="1、在同一个作用域下"></a>1、在同一个作用域下</h4><h4 id="2、函数名相同"><a href="#2、函数名相同" class="headerlink" title="2、函数名相同"></a>2、函数名相同</h4><h4 id="3、函数的参数类型、参数个数或者参数顺序不同"><a href="#3、函数的参数类型、参数个数或者参数顺序不同" class="headerlink" title="3、函数的参数类型、参数个数或者参数顺序不同"></a>3、函数的参数类型、参数个数或者参数顺序不同</h4><h4 id="满足以上条件均可实现函数重载"><a href="#满足以上条件均可实现函数重载" class="headerlink" title="满足以上条件均可实现函数重载"></a>满足以上条件均可实现函数重载</h4><h3 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h3><pre><code>//为了用同一个函数名执行不同的操作，可以让函数进行重载void func()//无参数传入的函数调用 &#123;    cout&lt;&lt;&quot;func()的调用&quot;&lt;&lt;endl;&#125; void func(int a)//传入一个整型数据的函数调用 &#123;    cout&lt;&lt;&quot;func(int a)的调用&quot;&lt;&lt;endl;  &#125; void func(double a)//传入一个double类型数据的函数调用 &#123;    cout&lt;&lt;&quot;func(double a)的调用&quot;&lt;&lt;endl; &#125;void func(int a,double b)//依次传入一个int和一个double类型数据的调用 &#123;    cout&lt;&lt;&quot;func(int a,double b)的调用&quot;&lt;&lt;endl;     &#125; void func(double a,int b)//依次传入一个double和一个int类型数据的调用 &#123;    cout&lt;&lt;&quot;func(double a,int b)的调用&quot;&lt;&lt;endl; &#125;  </code></pre><hr><h4 id="特别注意："><a href="#特别注意：" class="headerlink" title="特别注意："></a>特别注意：</h4><pre><code>//这种情况不满足函数重载的条件，因为func函数的返回类型和其他的同名函数不同//在编译时就会产生歧义(既可以被理解成调用void func()函数，也可以被理解成调用 int func()函数) int void fun()&#123;    cout&lt;&lt;&quot;func()&quot;&lt;&lt;endl; &#125;</code></pre><hr><pre><code>在主函数中进行调用 func(); func(10); func(3.14); func(10,3.14); func(3.14,10);  这五个函数依次输出对应的函数体中的操作</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>函数的占位参数</title>
+    <link href="/2021/12/03/%E5%87%BD%E6%95%B0%E7%9A%84%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0/"/>
+    <url>/2021/12/03/%E5%87%BD%E6%95%B0%E7%9A%84%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<h4 id="占位参数"><a href="#占位参数" class="headerlink" title="占位参数"></a>占位参数</h4><pre><code>C++中，函数的形参列表中可以有占位参数，用来作占位。调用函数的时候必须填补该占位处 的数据</code></pre><h4 id="语法：-返回值类型-函数名（数据类型）-…"><a href="#语法：-返回值类型-函数名（数据类型）-…" class="headerlink" title="语法： 返回值类型 函数名（数据类型）{…}"></a>语法： 返回值类型 函数名（数据类型）{…}</h4><h4 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h4><pre><code>//此处定义的函数不仅有一个参数a，还有一个int型的占位参数。 //在调用该函数的时候，不仅需要传入参数a，还要传入一个int型的数据 void func(int a,int)&#123;    return a*100;&#125;//在主函数中进行调用cout&lt;&lt;func(10，20)&lt;&lt;endl;</code></pre><h4 id="注意：占位参数也可以赋初始值"><a href="#注意：占位参数也可以赋初始值" class="headerlink" title="注意：占位参数也可以赋初始值"></a>注意：占位参数也可以赋初始值</h4><pre><code>例如：int func(int a,int = 10)&#123;    return a*100;&#125;//在主函数中进行调用cout&lt;&lt;func(5)&lt;&lt;endl;//此时占位参数就可以不用写，因为它已经被赋初始值了</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>函数默认参数</title>
+    <link href="/2021/12/03/%E5%87%BD%E6%95%B0%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0/"/>
+    <url>/2021/12/03/%E5%87%BD%E6%95%B0%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<h3 id="函数在声明或者实现的时候可以有默认参数"><a href="#函数在声明或者实现的时候可以有默认参数" class="headerlink" title="函数在声明或者实现的时候可以有默认参数"></a>函数在声明或者实现的时候可以有默认参数</h3><h4 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h4><pre><code>int func(int a,int b=10,int c=20)&#123;    return a+b+c;&#125;在主函数中进行调用cout&lt;&lt;func(10)&lt;&lt;endl; //输出的结果是10+10+20=40 cout&lt;&lt;func(10,20)&lt;&lt;endl;//输出的结果是10+20+20=50 </code></pre><h3 id="如果我们自己传入数据，那么函数体就调用传入的数据，否则就用默认值"><a href="#如果我们自己传入数据，那么函数体就调用传入的数据，否则就用默认值" class="headerlink" title="如果我们自己传入数据，那么函数体就调用传入的数据，否则就用默认值"></a>如果我们自己传入数据，那么函数体就调用传入的数据，否则就用默认值</h3><hr><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><h4 id="1、在函数的参数中，如果某个位置的参数有了默认值，那么这个位置之后的所有参数都必须有默认值"><a href="#1、在函数的参数中，如果某个位置的参数有了默认值，那么这个位置之后的所有参数都必须有默认值" class="headerlink" title="1、在函数的参数中，如果某个位置的参数有了默认值，那么这个位置之后的所有参数都必须有默认值"></a>1、在函数的参数中，如果某个位置的参数有了默认值，那么这个位置之后的所有参数都必须有默认值</h4><pre><code>例如： func(int a,int b=10,int c)&#123;...&#125; 是错误的，因为b有了默认参数，那么c也必须有</code></pre><h4 id="2、函数的声明和实现只能有一方有默认参数。即函数在声明时有了默认参数，那么在函数实现的时候就不能有默认参数；同样，在函数实现的时候有了默认参数，那么在函数声明的时候就不能有默认参数。"><a href="#2、函数的声明和实现只能有一方有默认参数。即函数在声明时有了默认参数，那么在函数实现的时候就不能有默认参数；同样，在函数实现的时候有了默认参数，那么在函数声明的时候就不能有默认参数。" class="headerlink" title="2、函数的声明和实现只能有一方有默认参数。即函数在声明时有了默认参数，那么在函数实现的时候就不能有默认参数；同样，在函数实现的时候有了默认参数，那么在函数声明的时候就不能有默认参数。"></a>2、函数的声明和实现只能有一方有默认参数。即函数在声明时有了默认参数，那么在函数实现的时候就不能有默认参数；同样，在函数实现的时候有了默认参数，那么在函数声明的时候就不能有默认参数。</h4><pre><code>    例如：//声明一个函数func()int func(int a=10,int b=20);//func函数的实现int func(int a=10,int b=20)&#123;    return a+b;&#125; 或者int func(int a=1000,int b=1000)&#123;    return a+b;&#125; 这样写是错误的</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>引用做函数返回值</title>
     <link href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC/"/>
     <url>/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC/</url>

@@ -190,6 +190,153 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/12/03/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD/" target="_self">
+          函数重载
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/12/03/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD/" target="_self">
+          
+          
+            
+          
+          作用：函数名可以相同，提高了同一个函数名的复用xing满足条件：1、在同一个作用域下2、函数名相同3、函数的参数类型、参数个数或者参数顺序不同满足以上条件均可实现函数重载举例：//为了用同一个函数名执行不同的操作，可以让函数进行重载
+
+void func()//无参数传入的函数调用 
+&#123;
+    cout&lt;&lt;&quot;func()的调用&quot;&lt;&lt;endl;
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-03 22:59" pubdate>
+              2021-12-03
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/12/03/%E5%87%BD%E6%95%B0%E7%9A%84%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0/" target="_self">
+          函数的占位参数
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/12/03/%E5%87%BD%E6%95%B0%E7%9A%84%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0/" target="_self">
+          
+          
+            
+          
+          占位参数C++中，函数的形参列表中可以有占位参数，用来作占位。调用函数的时候必须填补该占位处 的数据
+
+语法： 返回值类型 函数名（数据类型）{…}举例：//此处定义的函数不仅有一个参数a，还有一个int型的占位参数。 
+//在调用该函数的时候，不仅需要传入参数a，还要传入一个int型的数据 
+void func(int a,int)
+&#123;
+    return a*100;
+&#125;
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-03 22:58" pubdate>
+              2021-12-03
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/12/03/%E5%87%BD%E6%95%B0%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0/" target="_self">
+          函数默认参数
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/12/03/%E5%87%BD%E6%95%B0%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0/" target="_self">
+          
+          
+            
+          
+          函数在声明或者实现的时候可以有默认参数举例：int func(int a,int b=10,int c=20)
+&#123;
+    return a+b+c;
+&#125;
+
+在主函数中进行调用
+cout&lt;&lt;func(10)&lt;&lt;endl; //输出的结果是10+10+20=40 
+cout&lt;&lt;func(10,20)&lt;&lt;endl;//输出的结果是10
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-03 22:57" pubdate>
+              2021-12-03
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC/" target="_self">
           引用做函数返回值
         </a>
@@ -538,170 +685,6 @@ struct student
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
             <time datetime="2021-11-27 22:33" pubdate>
-              2021-11-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%B5%8C%E5%A5%97/" target="_self">
-          结构体的嵌套
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%B5%8C%E5%A5%97/" target="_self">
-          
-          
-            
-          
-          作用：结构体的成员可以是另一个结构体#include&lt;iostream&gt;
-#include&lt;string&gt;
-using namespace std;
-
-struct student
-&#123;
-    string name;//学生姓名 
-    int age;//学生年龄 
-    int score;//学生成绩 
-&#125; ; 
-
-
-struct teach
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-27 22:32" pubdate>
-              2021-11-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88/" target="_self">
-          结构体指针
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88/" target="_self">
-          
-          
-            
-          
-          1.定义结构体    struct student
-&#123;
-    string name;
-    int age;
-    int score;
-&#125;; 
-
-1.创建结构体指针//该结构体只有一个元素
-student Stu=&#123;&quot;张三&quot;,19,100&#125;;    
-
-2.通过指针指向结构体变量    //通过结构体指针指向该结构体，该指针的类
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-27 22:32" pubdate>
-              2021-11-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/C/">C++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93/" target="_self">
-          结构体
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/27/%E7%BB%93%E6%9E%84%E4%BD%93/" target="_self">
-          
-          
-            
-          
-          结构体的定义struct 结构体名
-&#123;
-    数据类型 数据名；
-        数据类型 数据名；
-        数据类型 数据名
-&#125;；
-
-创建结构体数组struct 结构体名 数组名[元素个数]=
-&#123;
-    &#123;&#125;,
-    &#123;&#125;,
-        &#123;&#125;,
-        &#123;&#125;
-&
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-27 22:32" pubdate>
               2021-11-27
             </time>
           </div>

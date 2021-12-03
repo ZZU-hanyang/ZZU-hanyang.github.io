@@ -16,20 +16,20 @@
   <meta name="description" content="">
   <meta name="author" content="韩阳">
   <meta name="keywords" content="">
-  <meta name="description" content="不要返回局部变量的引用例如：int &amp;func1() &amp;#123;     int a&#x3D;10;     return a;&#x2F;&#x2F;用引用的方式返回局部变量，即返回值是局部变量的别名  &amp;#125; 在主函数中进行调用： int &amp;p&#x3D;func1();  cout&lt;&lt;p&lt;&lt;endl;&#x2F;&#x2F;第一次输出正确是因为编译器作了保留  cout&lt;&lt;p&lt;&amp;lt">
+  <meta name="description" content="函数在声明或者实现的时候可以有默认参数举例：int func(int a,int b&#x3D;10,int c&#x3D;20) &amp;#123;     return a+b+c; &amp;#125;  在主函数中进行调用 cout&lt;&lt;func(10)&lt;&lt;endl; &#x2F;&#x2F;输出的结果是10+10+20&#x3D;40  cout&lt;&lt;func(10,20)&lt;&lt;endl;&#x2F;&#x2F;输出的结果是10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="引用做函数返回值">
-<meta property="og:url" content="http://example.com/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC/index.html">
+<meta property="og:title" content="函数默认参数">
+<meta property="og:url" content="http://example.com/2021/12/03/%E5%87%BD%E6%95%B0%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0/index.html">
 <meta property="og:site_name" content="韩阳">
-<meta property="og:description" content="不要返回局部变量的引用例如：int &amp;func1() &amp;#123;     int a&#x3D;10;     return a;&#x2F;&#x2F;用引用的方式返回局部变量，即返回值是局部变量的别名  &amp;#125; 在主函数中进行调用： int &amp;p&#x3D;func1();  cout&lt;&lt;p&lt;&lt;endl;&#x2F;&#x2F;第一次输出正确是因为编译器作了保留  cout&lt;&lt;p&lt;&amp;lt">
+<meta property="og:description" content="函数在声明或者实现的时候可以有默认参数举例：int func(int a,int b&#x3D;10,int c&#x3D;20) &amp;#123;     return a+b+c; &amp;#125;  在主函数中进行调用 cout&lt;&lt;func(10)&lt;&lt;endl; &#x2F;&#x2F;输出的结果是10+10+20&#x3D;40  cout&lt;&lt;func(10,20)&lt;&lt;endl;&#x2F;&#x2F;输出的结果是10">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-02T14:45:24.000Z">
-<meta property="article:modified_time" content="2021-12-03T04:39:44.697Z">
+<meta property="article:published_time" content="2021-12-03T14:57:34.000Z">
+<meta property="article:modified_time" content="2021-12-03T15:01:30.808Z">
 <meta property="article:author" content="韩阳">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>引用做函数返回值 - 韩阳</title>
+  <title>函数默认参数 - 韩阳</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="引用做函数返回值">
+            <span class="h2" id="subtitle" title="函数默认参数">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-12-02 22:45" pubdate>
-        2021年12月2日 晚上
+      <time datetime="2021-12-03 22:57" pubdate>
+        2021年12月3日 晚上
       </time>
     </span>
   
@@ -196,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      501 字
+      584 字
     </span>
   
 
@@ -234,33 +234,37 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">引用做函数返回值</h1>
+            <h1 style="display: none">函数默认参数</h1>
             
             <div class="markdown-body">
-              <h3 id="不要返回局部变量的引用"><a href="#不要返回局部变量的引用" class="headerlink" title="不要返回局部变量的引用"></a>不要返回局部变量的引用</h3><h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><pre><code>int &amp;func1()
+              <h3 id="函数在声明或者实现的时候可以有默认参数"><a href="#函数在声明或者实现的时候可以有默认参数" class="headerlink" title="函数在声明或者实现的时候可以有默认参数"></a>函数在声明或者实现的时候可以有默认参数</h3><h4 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h4><pre><code>int func(int a,int b=10,int c=20)
 &#123;
-    int a=10;
-    return a;//用引用的方式返回局部变量，即返回值是局部变量的别名 
+    return a+b+c;
 &#125;
-在主函数中进行调用：
-int &amp;p=func1();
 
-cout&lt;&lt;p&lt;&lt;endl;//第一次输出正确是因为编译器作了保留 
-cout&lt;&lt;p&lt;&lt;endl;//第二次输出错误是因为函数在执行完之后，局部变量占据的内存被释放了 
+在主函数中进行调用
+cout&lt;&lt;func(10)&lt;&lt;endl; //输出的结果是10+10+20=40 
+cout&lt;&lt;func(10,20)&lt;&lt;endl;//输出的结果是10+20+20=50 
 </code></pre>
-<h3 id="函数的调用可以作为左值"><a href="#函数的调用可以作为左值" class="headerlink" title="函数的调用可以作为左值"></a>函数的调用可以作为左值</h3><pre><code>int &amp;func2()
-&#123;
-    static int b=20;//静态变量，存放在全局区，全局区的数据会在程序结束后由系统释放掉 
-    return b;
-&#125;
-在主函数中进行调用：
-int &amp;q=func2();//用引用的方式接收函数的返回值 
-cout&lt;&lt;q&lt;&lt;endl;
-cout&lt;&lt;q&lt;&lt;endl;
+<h3 id="如果我们自己传入数据，那么函数体就调用传入的数据，否则就用默认值"><a href="#如果我们自己传入数据，那么函数体就调用传入的数据，否则就用默认值" class="headerlink" title="如果我们自己传入数据，那么函数体就调用传入的数据，否则就用默认值"></a>如果我们自己传入数据，那么函数体就调用传入的数据，否则就用默认值</h3><hr>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><h4 id="1、在函数的参数中，如果某个位置的参数有了默认值，那么这个位置之后的所有参数都必须有默认值"><a href="#1、在函数的参数中，如果某个位置的参数有了默认值，那么这个位置之后的所有参数都必须有默认值" class="headerlink" title="1、在函数的参数中，如果某个位置的参数有了默认值，那么这个位置之后的所有参数都必须有默认值"></a>1、在函数的参数中，如果某个位置的参数有了默认值，那么这个位置之后的所有参数都必须有默认值</h4><pre><code>例如：
+ func(int a,int b=10,int c)&#123;...&#125; 是错误的，因为b有了默认参数，那么c也必须有
+</code></pre>
+<h4 id="2、函数的声明和实现只能有一方有默认参数。即函数在声明时有了默认参数，那么在函数实现的时候就不能有默认参数；同样，在函数实现的时候有了默认参数，那么在函数声明的时候就不能有默认参数。"><a href="#2、函数的声明和实现只能有一方有默认参数。即函数在声明时有了默认参数，那么在函数实现的时候就不能有默认参数；同样，在函数实现的时候有了默认参数，那么在函数声明的时候就不能有默认参数。" class="headerlink" title="2、函数的声明和实现只能有一方有默认参数。即函数在声明时有了默认参数，那么在函数实现的时候就不能有默认参数；同样，在函数实现的时候有了默认参数，那么在函数声明的时候就不能有默认参数。"></a>2、函数的声明和实现只能有一方有默认参数。即函数在声明时有了默认参数，那么在函数实现的时候就不能有默认参数；同样，在函数实现的时候有了默认参数，那么在函数声明的时候就不能有默认参数。</h4><pre><code>    例如：
+//声明一个函数func()
+int func(int a=10,int b=20);
 
-//如果函数的返回值是引用，这个函数调用可以作为左值 
-func2()=1000;//此处的左值相当于静态变量b的别名，相当于对b进行赋值操作 
-cout&lt;&lt;q&lt;&lt;endl; 
+//func函数的实现
+int func(int a=10,int b=20)
+&#123;
+    return a+b;
+&#125; 
+或者
+int func(int a=1000,int b=1000)
+&#123;
+    return a+b;
+&#125; 
+这样写是错误的
 </code></pre>
 
             </div>
@@ -289,9 +293,9 @@ cout&lt;&lt;q&lt;&lt;endl;
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/12/03/%E5%87%BD%E6%95%B0%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0/">
+                      <a href="/2021/12/03/%E5%87%BD%E6%95%B0%E7%9A%84%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">函数默认参数</span>
+                        <span class="hidden-mobile">函数的占位参数</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -299,8 +303,8 @@ cout&lt;&lt;q&lt;&lt;endl;
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/">
-                        <span class="hidden-mobile">引用做函数参数</span>
+                      <a href="/2021/12/02/%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC/">
+                        <span class="hidden-mobile">引用做函数返回值</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
