@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>类和对象</title>
+    <link href="/2021/12/04/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/"/>
+    <url>/2021/12/04/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/</url>
+    
+    <content type="html"><![CDATA[<h3 id="C-面向对象的三大特性是：封装、继承和多态。"><a href="#C-面向对象的三大特性是：封装、继承和多态。" class="headerlink" title="C++面向对象的三大特性是：封装、继承和多态。"></a>C++面向对象的三大特性是：封装、继承和多态。</h3><h3 id="C-认为万事万物皆为对象，对象上有其属性和行为。"><a href="#C-认为万事万物皆为对象，对象上有其属性和行为。" class="headerlink" title="C++认为万事万物皆为对象，对象上有其属性和行为。"></a>C++认为万事万物皆为对象，对象上有其属性和行为。</h3><h4 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h4><pre><code>人作为对象，其属性有姓名、年龄、身高、体重...，行为有走、跑、跳、吃饭、唱歌...车也可以作为一种对象，其属性有轮胎、方向盘、车灯...，行为有载人、放音乐、开空调...</code></pre><h4 id="具有相同性质的对象，我们都可以将其抽象称为类，人属于人类，车属于车类。"><a href="#具有相同性质的对象，我们都可以将其抽象称为类，人属于人类，车属于车类。" class="headerlink" title="具有相同性质的对象，我们都可以将其抽象称为类，人属于人类，车属于车类。"></a>具有相同性质的对象，我们都可以将其抽象称为类，人属于人类，车属于车类。</h4><h3 id="封装："><a href="#封装：" class="headerlink" title="封装："></a>封装：</h3><h4 id="封装是C-面向对象三大特性之一"><a href="#封装是C-面向对象三大特性之一" class="headerlink" title="封装是C++面向对象三大特性之一"></a>封装是C++面向对象三大特性之一</h4><h3 id="封装的意义："><a href="#封装的意义：" class="headerlink" title="封装的意义："></a>封装的意义：</h3><h4 id="1、将属性和行为作为一个整体，表现生活中的事物"><a href="#1、将属性和行为作为一个整体，表现生活中的事物" class="headerlink" title="1、将属性和行为作为一个整体，表现生活中的事物"></a>1、将属性和行为作为一个整体，表现生活中的事物</h4><h4 id="2、将属性和行为加以权限控制。"><a href="#2、将属性和行为加以权限控制。" class="headerlink" title="2、将属性和行为加以权限控制。"></a>2、将属性和行为加以权限控制。</h4><h4 id="在设计类的时候，属性和行为写在一起，表现事物"><a href="#在设计类的时候，属性和行为写在一起，表现事物" class="headerlink" title="在设计类的时候，属性和行为写在一起，表现事物"></a>在设计类的时候，属性和行为写在一起，表现事物</h4><h3 id="语法：-class-类名-访问权限：-属性-行为"><a href="#语法：-class-类名-访问权限：-属性-行为" class="headerlink" title="语法：  class 类名 {访问权限： 属性/行为};"></a>语法：  class 类名 {访问权限： 属性/行为};</h3><hr><h4 id="例1："><a href="#例1：" class="headerlink" title="例1："></a>例1：</h4><pre><code>#include&lt;iostream&gt;#include&lt;string&gt;#define PI 3.14using namespace std;//创建一个圆类 class circle&#123;    //访问权限    //公共权限 public:    //属性    //半径     int m_r;    //行为    //获取圆的周长     double calculateR()    &#123;        return 2*PI*m_r;    &#125; &#125;;在主函数中进行调用//通过圆类 创建具体的圆（对象） circle c1;//给圆对象的属性进行赋值 c1.m_r=10;//获取圆的周长 cout&lt;&lt;&quot;c1的周长是：&quot;&lt;&lt;c1.calculateR()&lt;&lt;endl;</code></pre><hr><h4 id="例2："><a href="#例2：" class="headerlink" title="例2："></a>例2：</h4><pre><code>//创建一个学生类 class student&#123;    //权限     //公共权限 public:    //属性        //姓名     string s_name;    //学号    string s_ID;    //行为    //录入学生信息    void initStu()    &#123;        string name,ID;        cout&lt;&lt;&quot;请输入学生姓名：&quot;&lt;&lt;endl;        cin&gt;&gt;name;        s_name=name;        cout&lt;&lt;&quot;请输入学生学号：&quot;&lt;&lt;endl;        cin&gt;&gt;ID;        s_ID=ID;     &#125;      //显示学生信息      void showStu()      &#123;        cout&lt;&lt;&quot;姓名：&quot;&lt;&lt;s_name&lt;&lt;endl;        cout&lt;&lt;&quot;学号：&quot;&lt;&lt;s_ID&lt;&lt;endl;          &#125; &#125;;在主函数中进行调用  //创建一个具体的学生对象      student stu;  //录入学生信息   stu.initStu();  //显示学生信息   stu.showStu();</code></pre><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><h4 id="1、类的定义中，大括号末尾要加分号“；”"><a href="#1、类的定义中，大括号末尾要加分号“；”" class="headerlink" title="1、类的定义中，大括号末尾要加分号“；”"></a>1、类的定义中，大括号末尾要加分号“；”</h4><h4 id="2、类的引用操作为“-”"><a href="#2、类的引用操作为“-”" class="headerlink" title="2、类的引用操作为“.”"></a>2、类的引用操作为“.”</h4>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>函数重载</title>
     <link href="/2021/12/03/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD/"/>
     <url>/2021/12/03/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD/</url>
